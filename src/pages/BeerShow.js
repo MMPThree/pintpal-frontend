@@ -4,13 +4,17 @@ import Review from './Review'
 import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
+import mockReviews from '../mockReviews'
+import mockBeers from '../mockBeers'
 
 
-const BeerShow = ({ beers }) => {
+const BeerShow = () => {
   const { id } = useParams()
 
-  let selectedBeer = beers?.find((beer) => beer.id === +id)
-  
+  let selectedBeer = mockBeers.find((beer) => beer.id === +id)
+
+  // Filter reviews based on the selected beer's id
+  let beerReviews = mockReviews.filter((review) => review.beer_id === selectedBeer.id)
   return (
 
     <>
@@ -21,7 +25,7 @@ const BeerShow = ({ beers }) => {
         <li>ABV: {selectedBeer.abv}%</li>
         <li>{selectedBeer.description}</li>
       </ul>
-      <Review />
+      <Review reviews={beerReviews} />
       
     </>
   )
