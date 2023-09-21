@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/Home"
+import AboutUs from "../pages/AboutUs"
 import { BrowserRouter } from "react-router-dom";
 
-describe("<Home />", () => {
+describe("<AboutUs />", () => {
     it("renders without crashing", () => {
         render(
             <BrowserRouter>
-                <Home />
+                <AboutUs />
             </BrowserRouter>
         )
-        const greeting = screen.getByText("Welcome to Pint Pal 🍻")
+        const greeting = screen.getByText("Meet the team!")
         expect(greeting).toBeInTheDocument()
     })
 })
