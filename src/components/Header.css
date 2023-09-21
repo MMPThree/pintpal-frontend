@@ -1,8 +1,10 @@
+
 .navbar {
     border: 2px solid blue;
     font-size: 1.2rem;
     height: 100px;
-    background-color: ;
+    overflow: hidden;
+    width: 100%;
 }
 
 .nav-menu {
