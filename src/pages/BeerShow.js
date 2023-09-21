@@ -18,7 +18,9 @@ const BeerShow = () => {
   return (
 
     <>
-      <img alt={`picture of ${selectedBeer.name}`} src={selectedBeer.image_url} />
+    {selectedBeer && (
+      <>
+      <img alt={selectedBeer.name} src={selectedBeer.image_url} />
       <h3> {selectedBeer.name}</h3>
       <ul>
         <li>{selectedBeer.style}</li>
@@ -26,7 +28,8 @@ const BeerShow = () => {
         <li>{selectedBeer.description}</li>
       </ul>
       <Review reviews={beerReviews} />
-      
+      </>
+    )}
     </>
   )
 }
