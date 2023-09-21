@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom"
 import mockUsers from "./mockUsers.js"
 import mockBeers from "./mockBeers.js"
@@ -27,9 +27,83 @@ const App = () => {
   const [beers, setBeers] = useState(mockBeers)
   const [reviews, setReviews] = useState(mockReviews)
 
+  const url = "http://localhost:3000"
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user")
+    if (loggedInUser) {
+      setCurrentUser(JSON.parse(loggedInUser))
+    }
+  }, [])
+
+  const login = (userInfo) => {
+    fetch(`${url}/login`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText)
+        }
+        // store the token
+        localStorage.setItem("token", response.headers.get("Authorization"))
+        return response.json()
+      })
+      .then((payload) => {
+        localStorage.setItem("user", JSON.stringify(payload))
+        setCurrentUser(payload)
+      })
+      .catch((error) => console.log("login errors: ", error))
+  }
+
+  const signup = (userInfo) => {
+    fetch(`${url}/signup`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText)
+        }
+        console.log(response)
+        // store the token
+        localStorage.setItem("token", response.headers.get("Authorization"))
+        return response.json()
+      })
+      .then((payload) => {
+        localStorage.setItem("user", JSON.stringify(payload))
+        setCurrentUser(payload)
+      })
+      .catch((error) => console.log("signup errors: ", error))
+  }
+
+  const logout = (id) => {
+    fetch(`${url}/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"), 
+      },
+      method: "DELETE",
+    })
+      .then((payload) => {
+        setCurrentUser(null)
+        localStorage.removeItem("token")
+        localStorage.removeItem("user") 
+      })
+      .catch((error) => console.log("logout errors: ", error))
+  }
+
   return (
     <>
-      <Header current_user={currentUser}/>
+      <Header current_user={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
@@ -38,8 +112,8 @@ const App = () => {
         <Route path="/reviewedit/:id" element={<ReviewEdit />} />
         <Route path="/reviewnew" element={<ReviewNew />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<SignIn login={login}/>} />
+        <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
