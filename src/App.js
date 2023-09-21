@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header current_user={currentUser}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
