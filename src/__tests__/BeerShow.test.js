@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import BeerShow from '../pages/BeerShow'
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import mockBeers from '../mockBeers';
-import mockReviews from '../mockReviews';
+
 
 const renderShow = () => {
   render(
