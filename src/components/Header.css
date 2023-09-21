@@ -1,0 +1,15 @@
+.navbar {
+    border: 2px solid blue;
+    font-size: 1.2rem;
+    height: 100px;
+    background-color: ;
+}
+
+.nav-menu {
+     display: flex;   
+}
+
+.nav-link {
+    /* color: #fff !important; */
+    
+}
