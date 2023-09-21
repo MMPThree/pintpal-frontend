@@ -11,7 +11,7 @@ import mockBeers from '../mockBeers'
 const BeerShow = () => {
   const { id } = useParams()
 
-  let selectedBeer = mockBeers.find((beer) => beer.id === +id)
+  let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
 
   // Filter reviews based on the selected beer's id
   let beerReviews = mockReviews.filter((review) => review.beer_id === selectedBeer.id)
