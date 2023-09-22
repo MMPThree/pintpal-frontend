@@ -9,7 +9,7 @@ import mockBeers from '../mockBeers'
 import ReviewEdit from './ReviewEdit'
 
 
-const BeerShow = (currentReview) => {
+const BeerShow = ({ currentReview, current_user }) => {
   const { id } = useParams()
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
@@ -19,26 +19,30 @@ const BeerShow = (currentReview) => {
   return (
 
     <>
-    {selectedBeer && (
-      <>
-      <img alt={selectedBeer.name} src={selectedBeer.image_url} />
-      <h3> {selectedBeer.name}</h3>
-      <ul>
-        <li>{selectedBeer.style}</li>
-        <li>ABV: {selectedBeer.abv}%</li>
-        <li>{selectedBeer.description}</li>
-      </ul>
-      <Review reviews={beerReviews} />
-      </>
-    )}
-    <NavLink to={`/reviewedit/${currentReview.id}
+      {selectedBeer && (
+        <>
+          <img alt={selectedBeer.name} src={selectedBeer.image_url} />
+          <h3> {selectedBeer.name}</h3>
+          <ul>
+            <li>{selectedBeer.style}</li>
+            <li>ABV: {selectedBeer.abv}%</li>
+            <li>{selectedBeer.description}</li>
+          </ul>
+          <Review reviews={beerReviews} />
+        </>
+      )}
+      {current_user && (
+        <>
+          <NavLink to={`/reviewedit/${currentReview?.id}
           `} className="nav-link">
-          <Button>
-            Edit Review
-          </Button>
-        </NavLink>
+            <Button>
+              Edit Review
+            </Button>
+          </NavLink>
+        </>
+      )}
     </>
-    
+
   )
 }
 
