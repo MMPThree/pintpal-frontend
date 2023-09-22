@@ -101,6 +101,9 @@ const App = () => {
       .catch((error) => console.log("logout errors: ", error))
   }
 
+  const updateReview = (editReview, id) => {
+
+  }
   return (
     <>
       <Header current_user={currentUser} logout={logout}/>
@@ -109,7 +112,7 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
-        <Route path="/reviewedit/:id" element={<ReviewEdit reviews= {reviews} />} />
+        <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewnew" element={<ReviewNew />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
         <Route path="/login" element={<SignIn login={login}/>} />
