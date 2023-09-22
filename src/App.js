@@ -105,7 +105,7 @@ const App = () => {
   }
 
   const updateReview = (editReview, id) => {
-
+    console.log(reviews)
   }
   return (
     <>
