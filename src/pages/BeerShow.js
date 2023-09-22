@@ -6,9 +6,10 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import mockReviews from '../mockReviews'
 import mockBeers from '../mockBeers'
+import ReviewEdit from './ReviewEdit'
 
 
-const BeerShow = () => {
+const BeerShow = (currentReview) => {
   const { id } = useParams()
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
@@ -30,7 +31,14 @@ const BeerShow = () => {
       <Review reviews={beerReviews} />
       </>
     )}
+    <NavLink to={`/reviewedit/${currentReview.id}
+          `} className="nav-link">
+          <Button>
+            Edit Review
+          </Button>
+        </NavLink>
     </>
+    
   )
 }
 

@@ -22,13 +22,9 @@ const Review = ({ currentReview, reviews }) => {
          
 
         ))}
+        
       </ul>
-      <NavLink to={`/reviewedit/${currentReview.id}
-          `} className="nav-link">
-          <Button>
-            Edit Review
-          </Button>
-        </NavLink>
+      
     </div>
   )
 
