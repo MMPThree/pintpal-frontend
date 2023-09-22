@@ -17,7 +17,7 @@ const ReviewNew = ({ createReview }) => {
 
   const handleSubmit =() => {
     createReview(newReview)
-    // navigate("/beershow")
+    //  navigate("/beershow")
   }
 
   return (
@@ -90,7 +90,7 @@ const ReviewNew = ({ createReview }) => {
         </FormGroup>
       </Form>
       <Button onClick={handleSubmit} name="submit">
-        <NavLink to={'/beershow'}>Add Review
+        <NavLink to={`/beerindex`}>Add Review
         </NavLink>
       </Button>
       <Button >
