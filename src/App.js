@@ -26,6 +26,10 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
   const [beers, setBeers] = useState(mockBeers)
   const [reviews, setReviews] = useState(mockReviews)
+  const createReview = (review) => {
+    console.log(review)
+
+  }
 
   return (
     <>
@@ -36,7 +40,7 @@ const App = () => {
         <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit />} />
-        <Route path="/reviewnew" element={<ReviewNew />} />
+        <Route path="/reviewnew" element={<ReviewNew createReview={createReview}/>} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
