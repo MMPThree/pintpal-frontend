@@ -27,8 +27,8 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
     state: '',
     review_text: '',
     rating: 0,
-    user_id: 0,
-    beer_id: 0,
+    user_id: current_user.id,
+    beer_id: currentReview ? currentReview.beer_id : 0,
   })
 
   const handleChange = (e) => {
