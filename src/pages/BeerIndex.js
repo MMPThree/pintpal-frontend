@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {Card, CardBody, CardTitle, CardSubtitle, Button, CardImg} from 'reactstrap'
+import './BeerIndex.css'
 
 const BeerIndex = ({beers}) => {
   return (

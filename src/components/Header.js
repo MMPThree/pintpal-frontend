@@ -15,7 +15,7 @@ const Header = ({ current_user, logout }) => {
 
   return (
     <>
-      <Nav className='navbar'>
+      <Nav className='sticky-nav'>
 
         <NavItem>
           <NavLink to="/" className='nav-link'>

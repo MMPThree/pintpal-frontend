@@ -1,0 +1,15 @@
+.beer-body {
+    height: 100vh;
+    text-align: center;
+}
+
+.beer-listings {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.beer-cards {
+    width: 20%;
+    
+}

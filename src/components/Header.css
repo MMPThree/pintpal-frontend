@@ -1,17 +1,22 @@
 
-.navbar {
-    border: 2px solid blue;
+.sticky-nav {
     font-size: 1.2rem;
-    height: 100px;
-    overflow: hidden;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
     width: 100%;
+    background-color: #fff;
 }
 
 .nav-menu {
-     display: flex;   
+     display: flex;
+     margin-left: auto;
+     margin-top: 0.4em;
 }
 
 .nav-link {
-    /* color: #fff !important; */
+    color: #000 !important;
     
 }

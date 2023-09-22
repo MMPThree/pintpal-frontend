@@ -2,15 +2,16 @@ import React from 'react';
 import { CardGroup, Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import './Home.css'
-
+import { FaPencilAlt, FaWpforms, FaRegUserCircle } from "react-icons/fa"
 
 
 const Home = () => {
   return (
     <>
-      <div>
-        <h1>Welcome to Pint Pal 🍻</h1>
-      </div>
+      <section className='home-body'>
+        <div className='greeting'>
+        <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
+        <div className='home-buttons'>
       <Button className="homeButton" >
         <NavLink>Learn More
         </NavLink>
@@ -23,19 +24,15 @@ const Home = () => {
         <NavLink to={'/aboutus'}>About Us
         </NavLink>
       </Button>
-      <br />
-      <br />
-      <br />
-      <br />
+      </div>
+      </div>
+      </section>
+      
+      <section className='home-cards'>
       <h2>How it works</h2>
       <CardGroup>
         <Card>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
-          />
+          <FaRegUserCircle />
           <CardBody>
             <CardTitle tag="h5">
               Create an Account
@@ -78,6 +75,7 @@ const Home = () => {
           </CardBody>
         </Card>
       </CardGroup>
+      </section>
     </>
   )
 }
