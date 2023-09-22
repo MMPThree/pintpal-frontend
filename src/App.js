@@ -27,7 +27,6 @@ const App = () => {
   const [beers, setBeers] = useState(mockBeers)
   const [reviews, setReviews] = useState(mockReviews)
   const createReview = (review) => {
-    console.log(review)
 
   }
 
