@@ -71,9 +71,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
  
-   const handleSubmit = () => {
-    // updateReview(editReview, currentReview.id)
-    // navigate(`/reviews/${currentReview.id}`)
-    
-  }
- <Button onClick={handleSubmit}>Save</Button>
