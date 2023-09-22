@@ -6,9 +6,10 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import mockReviews from '../mockReviews'
 import mockBeers from '../mockBeers'
+import ReviewEdit from './ReviewEdit'
 
 
-const BeerShow = () => {
+const BeerShow = ({ currentReview, current_user }) => {
   const { id } = useParams()
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
@@ -18,19 +19,30 @@ const BeerShow = () => {
   return (
 
     <>
-    {selectedBeer && (
-      <>
-      <img alt={selectedBeer.name} src={selectedBeer.image_url} />
-      <h3> {selectedBeer.name}</h3>
-      <ul>
-        <li>{selectedBeer.style}</li>
-        <li>ABV: {selectedBeer.abv}%</li>
-        <li>{selectedBeer.description}</li>
-      </ul>
-      <Review reviews={beerReviews} />
-      </>
-    )}
+      {selectedBeer && (
+        <>
+          <img alt={selectedBeer.name} src={selectedBeer.image_url} />
+          <h3> {selectedBeer.name}</h3>
+          <ul>
+            <li>{selectedBeer.style}</li>
+            <li>ABV: {selectedBeer.abv}%</li>
+            <li>{selectedBeer.description}</li>
+          </ul>
+          <Review reviews={beerReviews} />
+        </>
+      )}
+      {current_user && (
+        <>
+          <NavLink to={`/reviewedit/${currentReview?.id}
+          `} className="nav-link">
+            <Button>
+              Edit Review
+            </Button>
+          </NavLink>
+        </>
+      )}
     </>
+
   )
 }
 
