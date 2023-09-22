@@ -20,11 +20,12 @@ const BeerIndex = ({beers}) => {
                   <li><CardSubtitle>{beer.description}</CardSubtitle></li>
                   </ul>
                 </div>
+
                 <NavLink to={`/beershow/${beer.id}`} className='nav-link'>
                   <Button className='beer-button'>Details</Button>
                 </NavLink>
-                {/* add review button */}
-                <NavLink  className='nav-link'>
+               
+                <NavLink to={`/reviewnew/${beer.id}`}  className='nav-link'>
                   <Button className='beer-button'>Add Review</Button>
                 </NavLink>
               </CardBody>

@@ -116,8 +116,11 @@ const App = () => {
         <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
-        <Route path="/reviewnew" element={<ReviewNew createReview={createReview}/>} />
-        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
+        <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview}/>} />
+        {currentUser && (
+        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} reviews={reviews}
+        current_user={currentUser}/>
+        )}
         <Route path="/login" element={<SignIn login={login}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/*" element={<NotFound />} />

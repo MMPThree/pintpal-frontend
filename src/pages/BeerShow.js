@@ -14,7 +14,6 @@ const BeerShow = ({ currentReview, current_user }) => {
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
 
-  // Filter reviews based on the selected beer's id
   let beerReviews = mockReviews.filter((review) => review.beer_id === selectedBeer.id)
   return (
 
