@@ -17,7 +17,6 @@ const ReviewNew = ({ createReview }) => {
 
   const handleSubmit =() => {
     createReview(newReview)
-    //  navigate("/beershow")
   }
 
   return (
