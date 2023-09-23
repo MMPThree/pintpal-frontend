@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Nav, NavItem } from 'reactstrap'
 import { NavLink, useNavigate } from 'react-router-dom'
 import pintpal from '../assets/pintpal.jpeg'
-import { FaBeer, FaSignInAlt, FaSignOutAlt, FaPencilAlt, FaWpforms } from "react-icons/fa"
+import { FaBeer, FaSignInAlt, FaSignOutAlt, FaPencilAlt, FaWpforms, FaBars, FaTimes } from "react-icons/fa"
 import './Header.css'
 
 const Header = ({ current_user, logout }) => {
@@ -13,18 +13,21 @@ const Header = ({ current_user, logout }) => {
     navigate("/")
   }
 
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
+
   return (
     <>
       <Nav className='sticky-nav'>
 
         <NavItem>
           <NavLink to="/" className='nav-link'>
-            <img src={pintpal} alt='pintpal logo' width="70px" />
+            <img src={pintpal} alt='pintpal logo' width="60px" />
             PintPal 
           </NavLink>
         </NavItem>
 
-        <div className='nav-menu'>
+        <div className={click ? 'nav-menu active' : 'nav-menu'}>
           <NavItem>
             <NavLink to="/beerindex" className='nav-link'>
               <FaBeer /> All Beers
@@ -60,6 +63,10 @@ const Header = ({ current_user, logout }) => {
           </NavItem>
           </>
           )}
+        </div>
+        <div className='hamburger' onClick={handleClick}>
+            {click ? (<FaTimes size={25} style={{color: "#000"}}/>
+            ) : (<FaBars size={25} style={{color: "#000"}}/>) }
         </div>
       </Nav>
 

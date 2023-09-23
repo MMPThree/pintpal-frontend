@@ -1,7 +1,7 @@
 
 .sticky-nav {
     font-size: 1.2rem;
-    height: 80px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,5 +18,43 @@
 
 .nav-link {
     color: #000 !important;
-    
 }
+
+.nav-link:hover {
+    color: #dca730 !important;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 1040px) {
+    .nav-menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      z-index: -3;
+      transition: 0.3s;
+    }
+    .nav-menu.active {
+      left: 0;
+    }
+  
+    .hamburger {
+      display: initial;
+      margin-left: auto;
+      margin-top: 0.57rem;
+    }
+  
+    .nav-menu .nav-link {
+      padding: 1rem 0;
+      font-size: 2rem;
+    }
+  
+  }

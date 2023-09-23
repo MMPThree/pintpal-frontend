@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: lora, sans-serif;
 }
 
 ul {
@@ -15,4 +18,27 @@ html {
 body {
   min-height: 100%;
   padding-top: 80px;
+}
+
+section {
+  min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5 {
+  position: relative;
+  text-align: center;
+  align-items: center;
+}
+
+button {
+  position: relative;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a :hover {
+  text-decoration: none;
+  color:#fcb63f;
 }
