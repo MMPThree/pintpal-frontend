@@ -32,7 +32,6 @@
     font-size: 6.5rem;
     color: #fff;
     text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
-    
 }
 
 .greeting-header {
@@ -53,6 +52,7 @@
 .homeButton {
     background-color: #bd881f !important;
     color: white !important;
+    opacity: 0.8;
 }
 
 .homeButton:hover {
@@ -63,12 +63,11 @@
 .homeButton a {
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
 }
 
 #home-cards {
     position: relative;
-    align-items: center;
-    justify-content: center;
 }
 
 #home-cards::before {
@@ -88,13 +87,11 @@
 
 #home-cards h2 {
     font-size: 4rem;
+    color: #fff;
+    text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
 }
 
 .how-content {
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center; */
     gap: 9rem;
     margin-left: 4rem;
     margin-right: 4rem;
@@ -116,22 +113,6 @@
     font-weight: 250;
 }
 
-/* .card-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* @media screen and (max-width: 1050px) {
-   .how-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-   }
-} */
-
 @media screen and (max-height: 650px) {
     #heading {
         font-size: 5rem;
@@ -148,5 +129,11 @@
     #heading {
         font-size: 3.3rem;
         margin-bottom: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .how-content {
+        flex-direction: column !important;
     }
 }

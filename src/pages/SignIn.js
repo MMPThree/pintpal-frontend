@@ -20,7 +20,7 @@ const SignIn = ({ login }) => {
 
   return (
     <div className='signin-body'>
-      <h2 className='sign-header'>Login</h2>
+      <h2>Login</h2>
       <form className='signin-form' ref={formRef} onSubmit={handleSubmit}>
         Email: <input type="email" name="email" placeholder="email" className='signin-input' />
         <br />

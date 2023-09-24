@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import mockReviews from '../mockReviews'
 import mockBeers from '../mockBeers'
-
+import './BeerShow.css'
 
 const BeerShow = () => {
   const { id } = useParams()
@@ -16,21 +16,24 @@ const BeerShow = () => {
   // Filter reviews based on the selected beer's id
   let beerReviews = mockReviews.filter((review) => review.beer_id === selectedBeer.id)
   return (
-
-    <>
+    <div className='beershow'>
     {selectedBeer && (
       <>
-      <img alt={selectedBeer.name} src={selectedBeer.image_url} />
+      <div className='beer-description'>
+      <img alt={selectedBeer.name} src={selectedBeer.image_url} style={{width: "35rem"}}/>
+      <div className='beer-content'>
       <h3> {selectedBeer.name}</h3>
       <ul>
         <li>{selectedBeer.style}</li>
         <li>ABV: {selectedBeer.abv}%</li>
-        <li>{selectedBeer.description}</li>
+        <li className='description'>{selectedBeer.description}</li>
       </ul>
+      </div>
+      </div>
       <Review reviews={beerReviews} />
       </>
     )}
-    </>
+    </div>
   )
 }
 

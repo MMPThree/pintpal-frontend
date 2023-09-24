@@ -5,7 +5,8 @@ import './Home.css'
 import { FaPencilAlt, FaWpforms, FaRegUserCircle } from "react-icons/fa"
 import { Link } from 'react-scroll'
 
-const Home = () => {
+const Home = ({ current_user }) => {
+  if (!current_user) {
   return (
     <div className='home-body'>
       <article className='home-scroll'> 
@@ -82,6 +83,15 @@ const Home = () => {
       </article>
     </div>
   )
+  } else if (current_user){
+    return (
+      <>
+        <div className='user-home'>
+          
+        </div>
+      </>
+    )
+  }
 }
 
 export default Home

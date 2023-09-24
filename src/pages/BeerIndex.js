@@ -3,37 +3,41 @@ import { NavLink } from 'react-router-dom'
 import {Card, CardBody, CardTitle, CardSubtitle, Button, CardImg} from 'reactstrap'
 import './BeerIndex.css'
 
-const BeerIndex = ({beers}) => {
+const BeerIndex = ({beers, current_user}) => {
   return (
+    <>
     <div className='beer-body'>
       <h1>Beer Listing</h1>
       <div className='beer-listings'>
         {beers?.map((beer, index) => {
           return(
-            <Card key={index} className='beer-cards'>
-              <CardImg top width="100%" src={beer.image_url} alt="" className="beer-picture"/>
+            <Card key={index} className='beer-cards px-0 py-0'>
+              <CardImg top width="100%" src={beer.image_url} alt="" className='custom-image'/>
               <CardBody>
                 <div className='beer-text'>
                   <CardTitle><b>{beer.name}</b></CardTitle>
-                  <ul>
-                  <li><CardSubtitle>{beer.style}</CardSubtitle></li>
-                  <li><CardSubtitle>ABV: {beer.abv}%</CardSubtitle></li>
-                  <li><CardSubtitle>{beer.description}</CardSubtitle></li>
-                  </ul>
+                  <CardSubtitle>{beer.style}</CardSubtitle>
+                  <CardSubtitle>ABV: {beer.abv}%</CardSubtitle>
                 </div>
+                <div className='index-buttons'>
                 <NavLink to={`/beershow/${beer.id}`} className='nav-link'>
                   <Button className='beer-button'>Details</Button>
                 </NavLink>
-                {/* add review button */}
+                {current_user && (
+                <>
                 <NavLink  className='nav-link'>
                   <Button className='beer-button'>Add Review</Button>
                 </NavLink>
+                </>
+                )}
+                </div>
               </CardBody>
             </Card>
           )
         })}
       </div>
     </div>
+    </>
   )
 }
 

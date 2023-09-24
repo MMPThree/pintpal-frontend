@@ -105,9 +105,9 @@ const App = () => {
     <>
       <Header current_user={currentUser} logout={logout}/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home current_user={currentUser}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
+        <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit />} />
         <Route path="/reviewnew" element={<ReviewNew />} />
