@@ -8,7 +8,7 @@ import mockReviews from '../mockReviews'
 import mockBeers from '../mockBeers'
 import './BeerShow.css'
 
-const BeerShow = () => {
+const BeerShow = ({ current_user }) => {
   const { id } = useParams()
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
@@ -28,9 +28,23 @@ const BeerShow = () => {
         <li>ABV: {selectedBeer.abv}%</li>
         <li className='description'>{selectedBeer.description}</li>
       </ul>
+      {current_user && (
+        <>
+          <div className='index-buttons'>
+                <NavLink to={'/beerindex'} className='nav-link'>
+                  <Button className='beer-button'>Back to Beers</Button>
+                </NavLink>
+                <NavLink to={'/reviewnew'}  className='nav-link'>
+                  <Button className='beer-button'>Add Review</Button>
+                </NavLink>
+          </div>
+        </>
+      )}
       </div>
       </div>
+      
       <Review reviews={beerReviews} />
+     
       </>
     )}
     </div>

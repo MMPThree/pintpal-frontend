@@ -4,6 +4,10 @@
     min-height: 100vh;
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .beer-description {

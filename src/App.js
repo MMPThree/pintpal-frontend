@@ -108,7 +108,7 @@ const App = () => {
         <Route path="/" element={<Home current_user={currentUser}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
-        <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
+        <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit />} />
         <Route path="/reviewnew" element={<ReviewNew />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
