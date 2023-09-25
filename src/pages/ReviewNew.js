@@ -1,22 +1,29 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 
-const ReviewNew = ({ createReview }) => {
+const ReviewNew = ({ createReview, current_user, beers }) => {
+  const {id} = useParams()
+  const navigate = useNavigate()
+  const currentBeer = beers?.find((beer) => beer.id === +id)
   const [newReview, setNewReview] = useState({
 
     city: "",
     state: "",
     review_text: "",
-    rating: 5,
+    rating: 0,
+    user_id: current_user?.id,
+    beer_id: currentBeer?.id  
   })
 
   const handleChange = (e) => {
     setNewReview({ ...newReview, [e.target.name]: e.target.value })
+    console.log(newReview)
   }
 
-  const handleSubmit =() => {
+  const handleSubmit = () => {
     createReview(newReview)
+    navigate("/reviewprotectedindex")
   }
 
   return (
@@ -44,7 +51,7 @@ const ReviewNew = ({ createReview }) => {
             name="state"
             type="text"
             onChange={handleChange}
-            value={newReview.state}
+            // value={newReview.state}
           />
         </FormGroup>
         <FormGroup>
@@ -56,7 +63,7 @@ const ReviewNew = ({ createReview }) => {
             name="review_text"
             type="textarea"
             onChange={handleChange}
-            value={newReview.review_text}
+            // value={newReview.review_text}
           />
         </FormGroup>
         <FormGroup>
@@ -68,7 +75,7 @@ const ReviewNew = ({ createReview }) => {
             name="rating"
             type="select"
             onChange={handleChange}
-            value={newReview.rating}
+            // value={newReview.rating}
           >
             <option>
               1

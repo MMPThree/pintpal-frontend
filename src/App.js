@@ -54,12 +54,25 @@ const App = () => {
   }
 
   const readReview = () => {
-    fetch(`${url}/reviews/`)
+    fetch(`${url}/reviews`)
       .then((response) => response.json())
       .then((payload) => {
         setReviews(payload)
       })
       .catch((error) => console.log(error))
+  }
+
+  const createReview = (review) => {
+    fetch(`${url}/reviews`, {
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then((response) => response.json())
+      .then(() => readReview())
+      .catch((errors) => console.log("Review create errors:", errors))
   }
 
   const login = (userInfo) => {
@@ -115,14 +128,14 @@ const App = () => {
     fetch(`${url}/logout`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"), 
+        Authorization: localStorage.getItem("token"),
       },
       method: "DELETE",
     })
       .then((payload) => {
         setCurrentUser(null)
         localStorage.removeItem("token")
-        localStorage.removeItem("user") 
+        localStorage.removeItem("user")
       })
       .catch((error) => console.log("logout errors: ", error))
   }
@@ -132,20 +145,21 @@ const App = () => {
   }
   return (
     <>
-      <Header current_user={currentUser} logout={logout}/>
+      <Header current_user={currentUser} logout={logout} />
       <Routes>
-        <Route path="/" element={<Home current_user={currentUser}/>} />
+        <Route path="/" element={<Home current_user={currentUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
+        <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser} />} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
-        <Route path="/reviewnew/:id" element={<ReviewNew />} />
         {currentUser && (
-        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} reviews={reviews}
-        current_user={currentUser}/>
+          <>
+            <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} beers={beers} current_user={currentUser} />} />
+            <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews} current_user={currentUser} />} />
+          </>
         )}
-        <Route path="/login" element={<SignIn login={login}/>} />
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
+        <Route path="/login" element={<SignIn login={login} />} />
+        <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

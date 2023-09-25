@@ -35,7 +35,7 @@ const BeerShow = ({ current_user, beers, reviews }) => {
                 <NavLink to={'/beerindex'} className='nav-link'>
                   <Button className='beer-button'>Back to Beers</Button>
                 </NavLink>
-                <NavLink to={'/reviewnew'}  className='nav-link'>
+                <NavLink to={`/reviewnew/${id}`}  className='nav-link'>
                   <Button className='beer-button'>Add Review</Button>
                 </NavLink>
           </div>
