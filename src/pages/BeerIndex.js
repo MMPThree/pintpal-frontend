@@ -25,7 +25,7 @@ const BeerIndex = ({beers, current_user}) => {
                 </NavLink>
                 {current_user && (
                 <>
-                <NavLink to={'/reviewnew'}  className='nav-link'>
+                <NavLink to={'/reviewnew/${beer.id}'}  className='nav-link'>
                   <Button className='beer-button'>Add Review</Button>
                 </NavLink>
                 </>

@@ -26,6 +26,9 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
   const [beers, setBeers] = useState(mockBeers)
   const [reviews, setReviews] = useState(mockReviews)
+  const createReview = (review) => {
+
+  }
 
   const url = "http://localhost:3000"
 
@@ -101,6 +104,9 @@ const App = () => {
       .catch((error) => console.log("logout errors: ", error))
   }
 
+  const updateReview = (editReview, id) => {
+    console.log(reviews)
+  }
   return (
     <>
       <Header current_user={currentUser} logout={logout}/>
@@ -109,9 +115,12 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews} />} />
-        <Route path="/reviewedit/:id" element={<ReviewEdit />} />
-        <Route path="/reviewnew" element={<ReviewNew />} />
-        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} />
+        <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
+        <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview}/>} />
+        {currentUser && (
+        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} reviews={reviews}
+        current_user={currentUser}/>
+        )}
         <Route path="/login" element={<SignIn login={login}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/*" element={<NotFound />} />

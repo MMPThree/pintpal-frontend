@@ -6,15 +6,16 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import mockReviews from '../mockReviews'
 import mockBeers from '../mockBeers'
+import ReviewEdit from './ReviewEdit'
 import './BeerShow.css'
 
 const BeerShow = ({ current_user }) => {
   const { id } = useParams()
 
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
-
   // Filter reviews based on the selected beer's id
   let beerReviews = mockReviews?.filter((review) => review?.beer_id === selectedBeer?.id)
+  
   return (
     <div className='beershow'>
     {selectedBeer && (

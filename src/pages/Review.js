@@ -7,10 +7,7 @@ import './Review.css'
 const Review = ({ review }) => {
   return (
     <>
-    
     <div className='review-container'>
-
-      
       <div className="top-review" key={review.id}>
         <div>
           <div className="avatar">
@@ -36,18 +33,6 @@ const Review = ({ review }) => {
       <div className="review-text">
         <p>{review.review_text}</p>
       </div>
-      {/* <ul>
-        {reviews.map((review) => (
-          <li key={review.id}>
-            <p>{review.city}, {review.state}</p>
-            <p>Rating: {review.rating}/5</p>
-            <p>"{review.review_text}"</p>
-
-          </li>
-        ))}
-      </ul> */}
-      
-      
     </div>
     </>
   )
