@@ -23,12 +23,17 @@ import SignUp from './pages/SignUp';
 
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
-  const [beers, setBeers] = useState(mockBeers)
-  const [reviews, setReviews] = useState(mockReviews)
-  const createReview = (review) => {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [beers, setBeers] = useState([])
+  const [reviews, setReviews] = useState([])
 
-  }
+  useEffect(() => {
+    readBeer()
+  }, [])
+
+  useEffect(() => {
+    readReview()
+  }, [])
 
   const url = "http://localhost:3000"
 
@@ -38,6 +43,24 @@ const App = () => {
       setCurrentUser(JSON.parse(loggedInUser))
     }
   }, [])
+
+  const readBeer = () => {
+    fetch(`${url}/beers`)
+      .then((response) => response.json())
+      .then((payload) => {
+        setBeers(payload)
+      })
+      .catch((error) => console.log(error))
+  }
+
+  const readReview = () => {
+    fetch(`${url}/reviews/`)
+      .then((response) => response.json())
+      .then((payload) => {
+        setReviews(payload)
+      })
+      .catch((error) => console.log(error))
+  }
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
@@ -116,7 +139,7 @@ const App = () => {
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
-        <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview}/>} />
+        <Route path="/reviewnew/:id" element={<ReviewNew />} />
         {currentUser && (
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} reviews={reviews}
         current_user={currentUser}/>
