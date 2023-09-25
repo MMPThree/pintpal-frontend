@@ -13,13 +13,13 @@ const ReviewProtectedIndex = ({ reviews, current_user, beers }) => {
       <h1> My Reviews </h1>
       <div className='reviews-body'>
     {myReviews?.map((review, index) => {
-      const beer = beers.find((beer) => beer.id === review.beer_id)
+      const beer = beers?.find((beer) => beer.id === review.beer_id)
       return(
         <Card key={index} className='review-card'>
           <CardImg top width='100%' src={review.image} alt='apt-img'/>
           <CardBody>
             <div className='review-content'>
-          <CardTitle><b>${beer.name}</b></CardTitle>
+          <CardTitle><b>{beer?.name}</b></CardTitle>
           <CardSubtitle>{review.city}, {review.state}</CardSubtitle>
           <CardSubtitle>{review.review_text}</CardSubtitle>
           </div>
