@@ -19,7 +19,7 @@
     background-size: cover;
     background-position: center;
     position: absolute;
-    background-color: aqua;
+    background-color: #876421;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -52,7 +52,6 @@
 .homeButton {
     background-color: #bd881f !important;
     color: white !important;
-    opacity: 0.8;
 }
 
 .homeButton:hover {
@@ -68,6 +67,7 @@
 
 #home-cards {
     position: relative;
+    margin-bottom: 5rem; 
 }
 
 #home-cards::before {
@@ -94,13 +94,14 @@
 .how-content {
     gap: 9rem;
     margin-left: 4rem;
-    margin-right: 4rem;
+    margin-right: 4rem; 
 }
 
 .card {
     opacity: 0.7;
     padding: 1.8rem; 
-    margin-top: 1.3rem;   
+    margin-top: 1.3rem; 
+    margin-bottom: 7rem !important;
 }
 
 .card h5 {
@@ -122,6 +123,8 @@
     #home-cards {
         min-height: 100vh;
     }
+    
+    
 }
 
 @media screen and (max-height: 350px), 
@@ -132,8 +135,62 @@
     }
 }
 
+
 @media screen and (max-width: 1050px) {
     .how-content {
         flex-direction: column !important;
     }
+    .card:nth-child(2) {
+        margin-top: -7rem;
+    }
+    .card:nth-child(3) {
+        margin-top: -7rem;
+    }
+}
+
+@media screen and (max-width: 677px) {
+    .homeButton {
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .how-content {
+        display: flex;
+    }
+    .card:nth-child(2) {
+        margin-top: -8rem;
+    }
+    .card:nth-child(3) {
+        margin-top: -8rem;
+    }
+}
+
+
+/* User home page */
+
+.user-home {
+    height: 100vh;
+}
+
+.user-body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.user-body::before {
+    content: "";
+    background-image: url('../assets/home-background.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: aqua;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
 }

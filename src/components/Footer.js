@@ -3,9 +3,9 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <footer className='footer-container'>
       <p>© 2023 Megan DeRisi | Mike Chavez | Peter Ji</p>
-    </div>
+    </footer>
   )
 }
 

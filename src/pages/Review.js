@@ -4,13 +4,13 @@ import Rating from "@mui/material/Rating"
 import { Avatar } from "@mui/material"
 import './Review.css'
 
-const Review = ({ reviews }) => {
+const Review = ({ review }) => {
   return (
     <>
-    <h2 className='reviews'>Reviews</h2>
+    
     <div className='review-container'>
-      {reviews.map((review) => 
-      <>
+
+      
       <div className="top-review" key={review.id}>
         <div>
           <div className="avatar">
@@ -33,7 +33,7 @@ const Review = ({ reviews }) => {
           </p>
           </div>
       </div>
-      <div className="bottom-review">
+      <div className="review-text">
         <p>{review.review_text}</p>
       </div>
       {/* <ul>
@@ -46,8 +46,8 @@ const Review = ({ reviews }) => {
           </li>
         ))}
       </ul> */}
-      </>
-      )}
+      
+      
     </div>
     </>
   )

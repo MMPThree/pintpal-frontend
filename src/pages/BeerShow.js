@@ -14,7 +14,7 @@ const BeerShow = ({ current_user }) => {
   let selectedBeer = mockBeers?.find((beer) => beer.id === +id)
 
   // Filter reviews based on the selected beer's id
-  let beerReviews = mockReviews.filter((review) => review.beer_id === selectedBeer.id)
+  let beerReviews = mockReviews?.filter((review) => review?.beer_id === selectedBeer?.id)
   return (
     <div className='beershow'>
     {selectedBeer && (
@@ -42,9 +42,18 @@ const BeerShow = ({ current_user }) => {
       )}
       </div>
       </div>
-      
-      <Review reviews={beerReviews} />
-     
+      <h2 className='reviews'>Reviews</h2>
+      <div className='review-box'>
+        {beerReviews?.map((review, index) => {
+          return(
+          <div key={index} className='review-margin'>
+      <Review review={review}
+      current_user={current_user}
+      index={index} />
+      </div>
+          )
+    })}
+   </div>
       </>
     )}
     </div>

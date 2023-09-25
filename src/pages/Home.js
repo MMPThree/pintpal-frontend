@@ -87,7 +87,23 @@ const Home = ({ current_user }) => {
     return (
       <>
         <div className='user-home'>
-          
+          <div className='user-body'>
+          <div className='greeting-header'>
+          <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
+          <div className='home-buttons'>
+      <Button className="homeButton" >
+        <NavLink to={'/beerindex'}>Get Started!
+       </NavLink>
+      </Button>
+  
+      <Button className="homeButton" >
+        <NavLink to={'/aboutus'}>About Us
+        </NavLink>
+      </Button>
+      </div>
+    
+          </div>
+          </div>
         </div>
       </>
     )

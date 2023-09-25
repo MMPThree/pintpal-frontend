@@ -22,11 +22,10 @@ const Header = ({ current_user, logout }) => {
 
         <NavItem>
           <NavLink to="/" className='nav-link'>
-            <img src={pintpal} alt='pintpal logo' width="60px" />
-            PintPal 
+            <img src={pintpal} alt='pintpal logo' width="60px" className='logo-img'/>
+            <span className='logo' style={{fontSize: "2.5rem"}}>PintPal</span>
           </NavLink>
         </NavItem>
-
         <div className={click ? 'nav-menu active' : 'nav-menu'}>
           <NavItem>
             <NavLink to="/beerindex" className='nav-link'>

@@ -11,11 +11,11 @@ const BeerIndex = ({beers, current_user}) => {
       <div className='beer-listings'>
         {beers?.map((beer, index) => {
           return(
-            <Card key={index} className='beer-cards px-0 py-0'>
+            <Card key={index} className='beer-cards px-0 py-0' style={{opacity: '1'}}>
               <CardImg top width="100%" src={beer.image_url} alt="" className='custom-image'/>
               <CardBody>
                 <div className='beer-text'>
-                  <CardTitle><b>{beer.name}</b></CardTitle>
+                  <CardTitle className='beer-name'><b>{beer.name}</b></CardTitle>
                   <CardSubtitle>{beer.style}</CardSubtitle>
                   <CardSubtitle>ABV: {beer.abv}%</CardSubtitle>
                 </div>
