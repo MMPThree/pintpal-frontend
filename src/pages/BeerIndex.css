@@ -1,0 +1,86 @@
+
+.beer-body {
+   position: relative;
+   min-height: 100vh;
+   text-align: center;
+}
+
+.beer-body::before {
+    content: "";
+    background-image: url('../assets/beer-craft.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: #876421;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.8;
+}
+
+.beer-body h1 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
+}
+
+.beer-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.beer-cards {
+    width: 17rem;
+    border: 2px solid #a1b2a1 !important;
+}
+
+/* .beer-listings .beer-cards {
+    background-color: #000 !important;
+    color: #fff;
+} */
+
+.custom-image {
+    height: 13rem;
+}
+
+.beer-text {
+    margin-bottom: 2rem;
+}
+
+.beer-button {
+    background-color: #bd881f !important;
+    font-weight: bold !important;
+}
+
+.beer-button:hover {
+    filter: brightness(120%);
+    transition: 0.3s;
+}
+
+.index-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2em;
+}
+
+@media screen and (max-width: 1055px) {
+    .beer-listings {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px),
+       screen and (max-height: 1000px) {
+        .beer-cards {
+            margin-bottom: 4rem !important;
+
+        }
+}

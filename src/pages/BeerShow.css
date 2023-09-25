@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Lora&display=swap');
+
+.beershow {
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.beer-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beer-content h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.beer-content li {
+    font-size: 1.8rem;
+}
+
+.beer-content .description {
+    font-family: Fuggles !important;
+    font-size: 3rem;
+}
+
+.review-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 1.2rem;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1350px) {
+    .review-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .beer-description {
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .beer-content h3 {
+        font-size: 2.5rem;
+    }
+}

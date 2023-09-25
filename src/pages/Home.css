@@ -1,6 +1,196 @@
-.homeButton{
-    justify-content: centered;
-    margin-left: 100px;
-    margin-right: 100px;
+.home-body {
+    text-align: center;
 }
 
+.home-scroll {
+    height: 100vh;
+}
+
+.greeting {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+} 
+
+.greeting::before {
+    content: "";
+    background-image: url('../assets/home-background.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: #876421;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+#heading {
+    margin-bottom: 4rem;
+    font-size: 6.5rem;
+    color: #fff;
+    text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
+}
+
+.greeting-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.homeButton {
+    background-color: #bd881f !important;
+    color: white !important;
+}
+
+.homeButton:hover {
+    filter: brightness(150%);
+    transition: 0.3s;
+}
+
+.homeButton a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#home-cards {
+    position: relative;
+    margin-bottom: 5rem; 
+}
+
+#home-cards::before {
+    content: "";
+    background-image: url('../assets/home-image.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: aqua;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+}
+
+#home-cards h2 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
+}
+
+.how-content {
+    gap: 9rem;
+    margin-left: 4rem;
+    margin-right: 4rem; 
+}
+
+.card {
+    opacity: 0.7;
+    padding: 1.8rem; 
+    margin-top: 1.3rem; 
+    margin-bottom: 7rem !important;
+}
+
+.card h5 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: 250;
+}
+
+@media screen and (max-height: 650px) {
+    #heading {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    #home-cards {
+        min-height: 100vh;
+    }
+    
+    
+}
+
+@media screen and (max-height: 350px), 
+       screen and (max-width: 300px) {
+    #heading {
+        font-size: 3.3rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .how-content {
+        flex-direction: column !important;
+    }
+    .card:nth-child(2) {
+        margin-top: -7rem;
+    }
+    .card:nth-child(3) {
+        margin-top: -7rem;
+    }
+}
+
+@media screen and (max-width: 677px) {
+    .homeButton {
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .how-content {
+        display: flex;
+    }
+    .card:nth-child(2) {
+        margin-top: -8rem;
+    }
+    .card:nth-child(3) {
+        margin-top: -8rem;
+    }
+}
+
+
+/* User home page */
+
+.user-home {
+    height: 100vh;
+}
+
+.user-body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.user-body::before {
+    content: "";
+    background-image: url('../assets/home-background.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: aqua;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}

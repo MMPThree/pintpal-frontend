@@ -19,16 +19,16 @@ const SignIn = ({ login }) => {
   }
 
   return (
-    <div>
+    <div className='signin-body'>
       <h2>Login</h2>
-      <form className='signup-form' ref={formRef} onSubmit={handleSubmit}>
-        Email: <input type="email" name="email" placeholder="email" className='signup-input' />
+      <form className='signin-form' ref={formRef} onSubmit={handleSubmit}>
+        Email: <input type="email" name="email" placeholder="email" className='signin-input' />
         <br />
-        Password: <input type="password" name="password" placeholder="password" className='signup-input' />
+        Password: <input type="password" name="password" placeholder="password" className='signin-input' />
         <br />
         <input className="submit-form" type='submit' value="Login" />
         <div className="bottom-link">Not registered?
-          <a href="/signup">  <u>Sign Up</u></a>
+          <a href="/signup">  <u style={{textDecoration: "none"}}>Sign Up</u></a>
         </div>
       </form>
     </div>

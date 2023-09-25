@@ -37,7 +37,7 @@ const SignUp = ({ signup }) => {
         <br />
         <input className="submit-form" type='submit' value="Register" />
         <div className="bottom-link">Already have an account?
-          <a href="/login">  <u>Login</u></a>
+          <a href="/login">  <u style={{textDecoration: "none"}}>Login</u></a>
         </div>
       </form>
     </div>
