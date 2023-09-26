@@ -47,7 +47,7 @@ const App = () => {
   }
 
   const readReview = () => {
-    fetch(`${url}/reviews/`)
+    fetch(`${url}/reviews`)
       .then((response) => response.json())
       .then((payload) => {
         setReviews(payload)
@@ -146,23 +146,23 @@ const App = () => {
     fetch(`${url}/logout`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"), 
+        Authorization: localStorage.getItem("token"),
       },
       method: "DELETE",
     })
       .then((payload) => {
         setCurrentUser(null)
         localStorage.removeItem("token")
-        localStorage.removeItem("user") 
+        localStorage.removeItem("user")
       })
       .catch((error) => console.log("logout errors: ", error))
   }
 
   return (
     <>
-      <Header current_user={currentUser} logout={logout}/>
+      <Header current_user={currentUser} logout={logout} />
       <Routes>
-        <Route path="/" element={<Home current_user={currentUser}/>} />
+        <Route path="/" element={<Home current_user={currentUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
@@ -174,8 +174,8 @@ const App = () => {
         current_user={currentUser} deleteReview={deleteReview} />} />
         </>
         )}
-        <Route path="/login" element={<SignIn login={login}/>} />
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
+        <Route path="/login" element={<SignIn login={login} />} />
+        <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

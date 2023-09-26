@@ -8,7 +8,6 @@ const ReviewProtectedIndex = ({ reviews, current_user, deleteReview }) => {
   
   const { id } = useParams()
 
-
   return (
     <>
     <div className='review-protected'>

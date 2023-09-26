@@ -15,9 +15,8 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
   const currentBeer = beers?.find((beer) => beer.id === +id)
 
   const navigate = useNavigate()
-
+  
   const [newReview, setNewReview] = useState({
-
     city: "",
     state: "",
     review_text: "",
