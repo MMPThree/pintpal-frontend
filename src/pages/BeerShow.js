@@ -46,7 +46,8 @@ const BeerShow = ({ current_user, beers, reviews, deleteReview }) => {
           <div key={index} className='review-margin'>
       <Review review={review}
       current_user={current_user}
-      index={index} />
+      index={index}
+      deleteReview={deleteReview} />
       </div>
           )
     })}

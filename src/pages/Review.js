@@ -4,11 +4,17 @@ import { Avatar } from "@mui/material"
 import Button from "@mui/material/Button"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Review.css'
 
-const Review = ({ review, current_user, handleDelete }) => {
+const Review = ({ review, current_user, deleteReview }) => {
   const { id } = useParams()
+  const navigate = useNavigate()
+
+  const handleDelete = () => {
+    deleteReview(review.id)
+    navigate("/reviewprotectedindex")
+  }
 
   return (
     <>

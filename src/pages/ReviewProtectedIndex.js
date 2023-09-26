@@ -8,9 +8,6 @@ const ReviewProtectedIndex = ({ reviews, current_user, deleteReview }) => {
   
   const { id } = useParams()
 
-  const handleDelete = () => {
-    deleteReview(id)
-  }
 
   return (
     <>
@@ -23,7 +20,7 @@ const ReviewProtectedIndex = ({ reviews, current_user, deleteReview }) => {
       <Review review={review}
       current_user={current_user}
       index={index}
-      handleDelete={handleDelete} />
+      deleteReview={deleteReview} />
       </div>
           )
     })}
