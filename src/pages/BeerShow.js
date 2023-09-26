@@ -1,15 +1,11 @@
 import React from 'react'
-import ReviewDelete from './ReviewDelete'
 import Review from './Review'
 import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
-import mockReviews from '../mockReviews'
-import mockBeers from '../mockBeers'
-import ReviewEdit from './ReviewEdit'
 import './BeerShow.css'
 
-const BeerShow = ({ current_user, beers, reviews }) => {
+const BeerShow = ({ current_user, beers, reviews, deleteReview }) => {
   const { id } = useParams()
 
   let selectedBeer = beers?.find((beer) => beer.id === +id)
@@ -35,7 +31,7 @@ const BeerShow = ({ current_user, beers, reviews }) => {
                 <NavLink to={'/beerindex'} className='nav-link'>
                   <Button className='beer-button'>Back to Beers</Button>
                 </NavLink>
-                <NavLink to={`/reviewnew/${id}`}  className='nav-link'>
+                <NavLink to={`/reviewnew/${selectedBeer.id}`}  className='nav-link'>
                   <Button className='beer-button'>Add Review</Button>
                 </NavLink>
           </div>
@@ -50,7 +46,8 @@ const BeerShow = ({ current_user, beers, reviews }) => {
           <div key={index} className='review-margin'>
       <Review review={review}
       current_user={current_user}
-      index={index} />
+      index={index}
+      deleteReview={deleteReview} />
       </div>
           )
     })}

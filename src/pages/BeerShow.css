@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap');
 
 .beershow {
     min-height: 100vh;
@@ -28,8 +28,8 @@
 }
 
 .beer-content .description {
-    font-family: Fuggles !important;
-    font-size: 3rem;
+    font-family: Raleway !important;
+    font-size: 2rem;
 }
 
 .review-box {
@@ -37,6 +37,11 @@
     grid-template-columns: repeat(2, 1fr); 
     grid-gap: 1.2rem;
     margin-bottom: 5rem;
+}
+
+.reviews {
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
 @media screen and (max-width: 1350px) {
