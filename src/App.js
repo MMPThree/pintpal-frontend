@@ -1,9 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom"
-import mockUsers from "./mockUsers.js"
-import mockBeers from "./mockBeers.js"
-import mockReviews from "./mockReviews.js"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import AboutUs from './pages/AboutUs';
@@ -11,15 +8,11 @@ import BeerIndex from './pages/BeerIndex';
 import BeerShow from './pages/BeerShow';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Review from './pages/Review';
 import ReviewEdit from './pages/ReviewEdit';
 import ReviewNew from './pages/ReviewNew';
 import ReviewProtectedIndex from './pages/ReviewProtectedIndex';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-
-
-
 
 
 const App = () => {
@@ -59,6 +52,44 @@ const App = () => {
       .then((payload) => {
         setReviews(payload)
       })
+      .catch((error) => console.log(error))
+  }
+
+  const createReview = (review) => {
+    fetch(`${url}/reviews`, {
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then((response) => response.json())
+      .then(() => readReview())
+      .catch((errors) => console.log("Review create errors:", errors))
+  }
+
+  const updateReview = (review, id) => {
+    fetch(`${url}/reviews/${id}`, {
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => response.json())
+      .then(() => readReview())
+      .catch((errors) => console.log("Review Update Errors:", errors))
+  }
+
+  const deleteReview = (id) => {
+    fetch(`${url}/reviews/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((payload) => readReview())
       .catch((error) => console.log(error))
   }
 
@@ -127,9 +158,6 @@ const App = () => {
       .catch((error) => console.log("logout errors: ", error))
   }
 
-  const updateReview = (editReview, id) => {
-    console.log(reviews)
-  }
   return (
     <>
       <Header current_user={currentUser} logout={logout}/>
@@ -137,12 +165,14 @@ const App = () => {
         <Route path="/" element={<Home current_user={currentUser}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
-        <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews} />} />
+        <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
         <Route path="/reviewedit/:id" element={<ReviewEdit current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
-        <Route path="/reviewnew/:id" element={<ReviewNew />} />
         {currentUser && (
-        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex />} reviews={reviews}
-        current_user={currentUser}/>
+          <>
+        <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} current_user={currentUser} beers={beers} />} />
+        <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews}
+        current_user={currentUser} deleteReview={deleteReview} />} />
+        </>
         )}
         <Route path="/login" element={<SignIn login={login}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
