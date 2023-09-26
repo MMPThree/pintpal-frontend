@@ -23,7 +23,7 @@ const Review = ({ review, current_user, deleteReview }) => {
         <div>
           <div className="avatar">
             <Avatar alt="Remy Sharp" src="" />
-            <p className="review-name" style={{marginBottom: "-1rem", marginLeft: "-1.5rem"}}>Anonymous</p>
+            <p className="review-name" style={{marginBottom: "-1rem", marginLeft: "-1.5rem"}}>{review.username}</p>
           </div>
           <p className="review-location">
             {review.city}, {review.state}
