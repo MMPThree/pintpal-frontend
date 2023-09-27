@@ -167,9 +167,9 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
-        <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         {currentUser && (
           <>
+        <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} current_user={currentUser} beers={beers} />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews}
         current_user={currentUser} deleteReview={deleteReview} />} />
