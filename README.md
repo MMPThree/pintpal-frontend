@@ -1,18 +1,13 @@
 README
-Title — PintPal
+
+PintPal is a full-stack web application created by the team MMP3 as a student capstone project at LEARN Academy.
 
 Overview — 
 A full stack web application built with Ruby on Rails. This application uses a postgresql database and a Ruby on Rails back-end with a front end using React.js created through the Rails asset pipeline. Created by Team MMP3 at LEARN Academy.
 
 Features — 
-PintPal is a full-stack web application created by the team MMP3 as a student capstone project at LEARN Academy. 
-Users are able to visit our site, seeing a homepage with buttons to select ‘Learn More’, ‘Sign Up’, and learn ‘About Us’. 
-Visiting users are also able to see a nav link in the upper right corner where they can select ‘All Beers’,  ‘Log In’, and ‘Sign Up’.
-Users are able create an account with their name and email address and are able to create a password and username.
-When logged in users are able to view beers and read the details of the beer and the existing reviews. Users are able to create public reviews for others to see as well as have a record of reviews under their ‘My Reviews’ page.  
-Users are able to edit and delete existing reviews they created. 
-Users are able to log in and log out.
-
+Introducing PintPal, the ultimate beer enthusiast's companion! With PintPal, you can explore the world of beers like never before. Create an account to review your favorite brews, edit them anytime, and even delete them if your taste evolves. Keep track of all your beer adventures with a personalized list of your reviews. Connect with fellow beer lovers, broaden your palate, and build a vibrant beer community. Whether you're a seasoned connoisseur or just starting your journey, PintPal is your go-to app to savor and share the world of flavors, one pint at a time. Join us in raising a glass to the future of beer exploration. Cheers to PintPal! 🍻
+ 
 
 Running the project — 
 https://pintpal.onrender.com/
