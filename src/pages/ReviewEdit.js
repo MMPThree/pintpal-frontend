@@ -25,6 +25,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
         rating: currentReview.rating,
         user_id: current_user.id,
         beer_id: currentReview.beer_id,
+        username: current_user.username
       })
     }
   }, [currentReview])
@@ -34,6 +35,9 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
     state: '',
     review_text: '',
     rating: '',
+    user_id: current_user?.id,
+    beer_id: currentBeer?.id,
+    username: current_user.username
   })
 
   const handleChange = (e) => {
@@ -47,7 +51,6 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
 
   return (
     <>
-    {editReview && (
       <div className='form-body'>
         <div className='review-form'>
           <div className='review-header'>
@@ -149,7 +152,6 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
 
         </div>
       </div>
-      )}
     </>
   )
 }
