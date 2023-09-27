@@ -19,16 +19,16 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
   useEffect(() => {
     if (currentReview) {
       setEditReview({
-        city: currentReview.city,
-        state: currentReview.state,
-        review_text: currentReview.review_text,
-        rating: currentReview.rating,
-        user_id: current_user.id,
-        beer_id: currentReview.beer_id,
-        username: current_user.username
+        city: currentReview?.city,
+        state: currentReview?.state,
+        review_text: currentReview?.review_text,
+        rating: currentReview?.rating,
+        user_id: current_user?.id,
+        beer_id: currentReview?.beer_id,
+        username: current_user?.username
       })
     }
-  }, [currentReview])
+  }, [reviews])
 
   const [editReview, setEditReview] = useState({
     city: '',
@@ -49,7 +49,6 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
     navigate("/reviewprotectedindex")
   }
 
-  console.log("current_review:", currentReview.id)
 
   return (
     <>

@@ -29,8 +29,8 @@ const App = () => {
     readReview()
   }, [])
 
-  // const url = "http://localhost:3000"
-  const url = "https://pintpal-backend.onrender.com"
+  const url = "http://localhost:3000"
+  // const url = "https://pintpal-backend.onrender.com"
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user")
@@ -165,20 +165,20 @@ const App = () => {
       <Header current_user={currentUser} logout={logout} />
       <Routes>
         <Route path="/" element={<Home current_user={currentUser} />} />
+        <Route path="/login" element={<SignIn login={login} />} />
+        <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
         {currentUser && (
           <>
-        <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} current_user={currentUser} beers={beers} />} />
+        <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews}
         current_user={currentUser} deleteReview={deleteReview} />} />
         </>
         )}
-        <Route path="/login" element={<SignIn login={login} />} />
-        <Route path="/signup" element={<SignUp signup={signup} />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
