@@ -49,6 +49,8 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
     navigate("/reviewprotectedindex")
   }
 
+  console.log("current_review:", currentReview.id)
+
   return (
     <>
       <div className='form-body'>

@@ -16,6 +16,7 @@ import SignUp from './pages/SignUp';
 
 
 const App = () => {
+
   const [currentUser, setCurrentUser] = useState(null)
   const [beers, setBeers] = useState([])
   const [reviews, setReviews] = useState([])

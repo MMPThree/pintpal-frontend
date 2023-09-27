@@ -15,6 +15,9 @@ const Review = ({ review, current_user, deleteReview }) => {
     deleteReview(review.id)
     navigate("/reviewprotectedindex")
   }
+ 
+  //console log review id
+  console.log("review_id:", review.id)
 
   return (
     <>
