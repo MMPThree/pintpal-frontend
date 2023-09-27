@@ -33,7 +33,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
     city: '',
     state: '',
     review_text: '',
-    rating: 0,
+    rating: '',
   })
 
   const handleChange = (e) => {
