@@ -47,6 +47,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
 
   return (
     <>
+    {editReview && (
       <div className='form-body'>
         <div className='review-form'>
           <div className='review-header'>
@@ -148,6 +149,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
 
         </div>
       </div>
+      )}
     </>
   )
 }
