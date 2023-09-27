@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
   const navigate = useNavigate()
   let { id } = useParams()
-
+  console.log("params_id:", id)
   const currentReview = reviews?.find((review) => review?.id === +id)
   const currentBeer = beers?.find((beer) => beer.id === currentReview?.beer_id)
 
