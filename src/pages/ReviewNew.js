@@ -22,7 +22,8 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
     review_text: "",
     rating: 0,
     user_id: current_user?.id,
-    beer_id: currentBeer?.id
+    beer_id: currentBeer?.id,
+    username: current_user.username
   })
 
   const handleChange = (e) => {
