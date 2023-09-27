@@ -11,7 +11,7 @@ const SignUp = ({ signup }) => {
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      "user": { email: data.email, password: data.password }
+      "user": { email: data.email, password: data.password, username: data.username }
     }
     signup(userInfo)
     e.target.reset()

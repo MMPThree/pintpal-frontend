@@ -11,6 +11,8 @@ import Button from "@mui/material/Button";
 import './ReviewNew.css'
 
 const ReviewNew = ({ createReview, current_user, beers }) => {
+  console.log(current_user)
+
   const { id } = useParams()
   const currentBeer = beers?.find((beer) => beer.id === +id)
 
@@ -20,7 +22,7 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
     city: "",
     state: "",
     review_text: "",
-    rating: 0,
+    rating: "",
     user_id: current_user?.id,
     beer_id: currentBeer?.id,
     username: current_user.username
@@ -124,7 +126,7 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
             }}>
                   <AddRoundedIcon/>&nbsp;Add Review
               </Button>
-              <Button className='review-button' href={`/beershow/${currentBeer.id}`} sx={{
+              <Button className='review-button' href={`/beershow/${currentBeer?.id}`} sx={{
               color: "white",
               padding: "12px",
               bgcolor: "#ee1515",
