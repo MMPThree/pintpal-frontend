@@ -21,10 +21,16 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
   const [beers, setBeers] = useState([])
   const [reviews, setReviews] = useState([])
-  const [beerData, setBeerData] = useState(mockApi)
+  const [beerData, setBeerData] = useState([])
+  const apiKey = process.env.REACT_APP_API_KEY
 
   const beerFetch = () => {
-    let data = mockApi.
+    fetch(
+      "https://api.punkapi.com/v2/beers"
+    )
+      .then((response) => response.json())
+      .then((payload) => setBeerData(payload))
+      .catch((error) => console.log(error))
   }
 
   useEffect(() => {
@@ -35,8 +41,12 @@ const App = () => {
     readReview()
   }, [])
 
-  // const url = "http://localhost:3000"
-  const url = "https://pintpal-backend.onrender.com"
+  useEffect(() => {
+    beerFetch()
+  }, [])
+
+  const url = "http://localhost:3000"
+  // const url = "https://pintpal-backend.onrender.com"
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user")
@@ -174,7 +184,7 @@ const App = () => {
         <Route path="/login" element={<SignIn login={login} />} />
         <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
+        <Route path="/beerindex" element={<BeerIndex beers={beers} beerData={beerData} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
         {currentUser && (
           <>
