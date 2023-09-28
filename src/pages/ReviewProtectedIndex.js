@@ -1,13 +1,10 @@
 import React from 'react'
 import Review from "./Review"
-import { useParams } from 'react-router-dom'
 import './ReviewProtectedIndex.css'
 
 const ReviewProtectedIndex = ({ reviews, current_user, deleteReview }) => {
   const myReviews = reviews?.filter(review => current_user?.id === review.user_id)
   
-  const { id } = useParams()
-
   return (
     <>
     <div className='review-protected'>

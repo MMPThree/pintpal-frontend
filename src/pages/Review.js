@@ -16,9 +16,6 @@ const Review = ({ review, current_user, deleteReview }) => {
     navigate("/reviewprotectedindex")
   }
 
-  console.log("current_user:", current_user.id)
-  console.log("review_user:", review.user_id)
-  console.log("review_id:", review.id)
   return (
     <>
       <div className='review-container'>
