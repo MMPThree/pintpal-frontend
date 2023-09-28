@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, NavLink } from 'react-router-dom'
 import TextField from "@mui/material/TextField"
 import FormControl from "@mui/material/FormControl"
 import InputLabel from "@mui/material/InputLabel"
@@ -139,7 +139,8 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
             }}>
                   <AddRoundedIcon/>&nbsp;Update Review
               </Button>
-              <Button className='review-button' href="/reviewprotectedindex" sx={{
+              <NavLink to="/reviewprotectedindex">
+              <Button className='review-button' sx={{
               color: "white",
               padding: "12px",
               bgcolor: "#ee1515",
@@ -149,6 +150,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
             }}>
                 <CancelRoundedIcon/>&nbsp;Cancel
               </Button>
+              </NavLink>
           </div>
 
         </div>

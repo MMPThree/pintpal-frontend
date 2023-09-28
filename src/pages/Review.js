@@ -62,7 +62,7 @@ const Review = ({ review, current_user, deleteReview }) => {
             </Button>
             </NavLink>
           
-            <NavLink to={("/reviewprotectedindex")}>
+            <NavLink to="/reviewprotectedindex">
             <Button className='review-button'
               onClick={handleDelete}
               sx={{
