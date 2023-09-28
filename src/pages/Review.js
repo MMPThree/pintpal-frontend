@@ -4,16 +4,15 @@ import { Avatar } from "@mui/material"
 import Button from "@mui/material/Button"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Review.css'
 
 const Review = ({ review, current_user, deleteReview }) => {
   
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const handleDelete = () => {
     deleteReview(review.id)
-    navigate("/reviewprotectedindex")
   }
 
   console.log("current_user:", current_user.id)
@@ -50,7 +49,8 @@ const Review = ({ review, current_user, deleteReview }) => {
 
           {current_user && current_user.id === review.user_id && (
           <div className='review-buttons'>
-            <Button href={`/reviewedit/${review.id}`} className='review-button' sx={{
+            <NavLink to={`/reviewedit/${review.id}`}>
+            <Button className='review-button' sx={{
               color: "white",
               padding: "12px",
               bgcolor: "#55AF4D",
@@ -60,6 +60,9 @@ const Review = ({ review, current_user, deleteReview }) => {
             }}>
               <EditIcon />&nbsp;Edit Review
             </Button>
+            </NavLink>
+          
+            <NavLink to={("/reviewprotectedindex")}>
             <Button className='review-button'
               onClick={handleDelete}
               sx={{
@@ -72,6 +75,7 @@ const Review = ({ review, current_user, deleteReview }) => {
               }}>
               <DeleteIcon />&nbsp;Delete
             </Button>
+            </NavLink>
           </div>
           )}
 
