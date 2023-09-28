@@ -17,13 +17,13 @@ const BeerShow = ({ current_user, beers, reviews, deleteReview }) => {
     {selectedBeer && (
       <>
       <div className='beer-description'>
-      <img alt={selectedBeer.name} src={selectedBeer.image_url} style={{width: "35rem"}}/>
+      <img alt={selectedBeer?.name} src={selectedBeer?.image_url} style={{width: "35rem"}}/>
       <div className='beer-content'>
-      <h3> {selectedBeer.name}</h3>
+      <h3> {selectedBeer?.name}</h3>
       <ul>
-        <li>{selectedBeer.style}</li>
-        <li>ABV: {selectedBeer.abv}%</li>
-        <li className='description'>{selectedBeer.description}</li>
+        <li>{selectedBeer?.style}</li>
+        <li>ABV: {selectedBeer?.abv}%</li>
+        <li className='description'>{selectedBeer?.description}</li>
       </ul>
       {current_user && (
         <>
