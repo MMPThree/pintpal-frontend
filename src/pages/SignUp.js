@@ -22,7 +22,7 @@ const SignUp = ({ signup }) => {
     <div className='signup-body'>
       <h2 className='sign-header'>Sign Up</h2>
       <form className='signup-form' ref={formRef} onSubmit={handleSubmit}>
-        Username: <input type="text" name="username" placeholder="username" />
+        Username: <input type="text" name="username" placeholder="username" className='signup-input' />
         <br/>
         Email: <input type="email" name="email" placeholder="email" className='signup-input' />
         <br />
