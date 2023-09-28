@@ -13,6 +13,7 @@ import ReviewNew from './pages/ReviewNew';
 import ReviewProtectedIndex from './pages/ReviewProtectedIndex';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import mockApi from './mockApi';
 
 
 const App = () => {
@@ -20,6 +21,11 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
   const [beers, setBeers] = useState([])
   const [reviews, setReviews] = useState([])
+  const [beerData, setBeerData] = useState(mockApi)
+
+  const beerFetch = () => {
+    let data = mockApi.
+  }
 
   useEffect(() => {
     readBeer()
