@@ -84,14 +84,14 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
                 required
               />
             </FormControl>
-            </div>
+          </div>
 
-            <div className='review-row'>
-              <FormControl sx={{
-                width: "13rem",
-                borderRadius: "5px",
-                height: "65px",
-              }}>
+          <div className='review-row'>
+            <FormControl sx={{
+              width: "13rem",
+              borderRadius: "5px",
+              height: "65px",
+            }}>
               <InputLabel required>Rating</InputLabel>
               <Select
                 labelId="ratingLabel"
@@ -107,50 +107,50 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
                 <MenuItem value={4}>4</MenuItem>
                 <MenuItem value={5}>5</MenuItem>
               </Select>
-              </FormControl>
-            </div>
+            </FormControl>
+          </div>
 
-            <div className='review-row'>
-               <FormControl>
-                  <TextField 
-                    onChange={handleChange}
-                    required
-                    id="review_text"
-                    name="review_text"
-                    label="Review"
-                    value={editReview.review_text}
-                    type="text"
-                    multiline
-                    rows={5}
-                    sx={{width: "30rem"}}
-                    className='textarea'
-                  />
-               </FormControl>
-            </div>
+          <div className='review-row'>
+            <FormControl>
+              <TextField
+                onChange={handleChange}
+                required
+                id="review_text"
+                name="review_text"
+                label="Review"
+                value={editReview.review_text}
+                type="text"
+                multiline
+                rows={5}
+                sx={{ width: "30rem" }}
+                className='textarea'
+              />
+            </FormControl>
+          </div>
 
           <div className='review-buttons'>
-              <Button className='review-button' onClick={handleSubmit} sx={{
+            <Button className='review-button' onClick={handleSubmit} sx={{
               color: "white",
               padding: "12px",
               bgcolor: "#2d2aef",
               '&:hover': {
                 background: "#6487e8",
-             }
+              }
             }}>
-                  <AddRoundedIcon/>&nbsp;Update Review
-              </Button>
-              <NavLink to="/reviewprotectedindex">
+              <AddRoundedIcon />&nbsp;Update Review
+            </Button>
+            <NavLink to="/reviewprotectedindex">
               <Button className='review-button' sx={{
-              color: "white",
-              padding: "12px",
-              bgcolor: "#ee1515",
-              '&:hover': {
-                background: "#f76262",
-             }
-            }}>
-                <CancelRoundedIcon/>&nbsp;Cancel
+                color: "white",
+                padding: "12px",
+                bgcolor: "#ee1515",
+                '&:hover': {
+                  background: "#f76262",
+                }
+              }}>
+                <CancelRoundedIcon />&nbsp;Cancel
               </Button>
-              </NavLink>
+            </NavLink>
           </div>
 
         </div>

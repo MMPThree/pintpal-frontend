@@ -8,7 +8,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import './Review.css'
 
 const Review = ({ review, current_user, deleteReview }) => {
-  
+
   const navigate = useNavigate()
 
   const handleDelete = () => {
@@ -21,48 +21,48 @@ const Review = ({ review, current_user, deleteReview }) => {
   console.log("review_id:", review.id)
   return (
     <>
-        <div className='review-container'>
-          <div className="top-review" key={review.id}>
-            <div>
-              <div className="avatar">
-                <Avatar alt="Remy Sharp" src="" />
-                <p className="review-name" style={{ marginBottom: "-1rem", marginLeft: "-1.5rem" }}>{review.username}</p>
-              </div>
-              <p className="review-location">
-                {review.city}, {review.state}
-              </p>
+      <div className='review-container'>
+        <div className="top-review" key={review.id}>
+          <div>
+            <div className="avatar">
+              <Avatar alt="Remy Sharp" src="" />
+              <p className="review-name" style={{ marginBottom: "-1rem", marginLeft: "-1.5rem" }}>{review.username}</p>
             </div>
-            <div className="rating-star">
-              <Rating
-                name="read-only"
-                value={review.rating}
-                readOnly
-                size="medium"
-              />
-              <p className="review-rating">
-                Rating:&nbsp;&nbsp;<span>{review.rating}/5</span>
-              </p>
-            </div>
+            <p className="review-location">
+              {review.city}, {review.state}
+            </p>
           </div>
-          <div className="review-text">
-            <p>{review.review_text}</p>
+          <div className="rating-star">
+            <Rating
+              name="read-only"
+              value={review.rating}
+              readOnly
+              size="medium"
+            />
+            <p className="review-rating">
+              Rating:&nbsp;&nbsp;<span>{review.rating}/5</span>
+            </p>
           </div>
+        </div>
+        <div className="review-text">
+          <p>{review.review_text}</p>
+        </div>
 
-          {current_user && current_user.id === review.user_id && (
+        {current_user && current_user.id === review.user_id && (
           <div className='review-buttons'>
             <NavLink to={`/reviewedit/${review.id}`}>
-            <Button className='review-button' sx={{
-              color: "white",
-              padding: "12px",
-              bgcolor: "#55AF4D",
-              '&:hover': {
-                background: "#82c87b",
-              }
-            }}>
-              <EditIcon />&nbsp;Edit Review
-            </Button>
+              <Button className='review-button' sx={{
+                color: "white",
+                padding: "12px",
+                bgcolor: "#55AF4D",
+                '&:hover': {
+                  background: "#82c87b",
+                }
+              }}>
+                <EditIcon />&nbsp;Edit Review
+              </Button>
             </NavLink>
-          
+
             <Button className='review-button'
               onClick={handleDelete}
               sx={{
@@ -76,10 +76,10 @@ const Review = ({ review, current_user, deleteReview }) => {
               <DeleteIcon />&nbsp;Delete
             </Button>
           </div>
-          )}
+        )}
 
-        </div>
-     
+      </div>
+
     </>
   )
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, NavLink } from 'react-router-dom';
 import TextField from "@mui/material/TextField"
 import FormControl from "@mui/material/FormControl"
 import InputLabel from "@mui/material/InputLabel"
@@ -17,7 +17,7 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
   const currentBeer = beers?.find((beer) => beer.id === +id)
 
   const navigate = useNavigate()
-  
+
   const [newReview, setNewReview] = useState({
     city: "",
     state: "",
@@ -71,14 +71,14 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
                 required
               />
             </FormControl>
-            </div>
+          </div>
 
-            <div className='review-row'>
-              <FormControl sx={{
-                width: "13rem",
-                borderRadius: "5px",
-                height: "65px",
-              }}>
+          <div className='review-row'>
+            <FormControl sx={{
+              width: "13rem",
+              borderRadius: "5px",
+              height: "65px",
+            }}>
               <InputLabel required>Rating</InputLabel>
               <Select
                 labelId="ratingLabel"
@@ -94,48 +94,51 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
                 <MenuItem value={4}>4</MenuItem>
                 <MenuItem value={5}>5</MenuItem>
               </Select>
-              </FormControl>
-            </div>
+            </FormControl>
+          </div>
 
-            <div className='review-row'>
-               <FormControl>
-                  <TextField 
-                    onChange={handleChange}
-                    required
-                    id="review_text"
-                    name="review_text"
-                    label="Review"
-                    value={newReview.review_text}
-                    type="text"
-                    multiline
-                    rows={5}
-                    sx={{width: "30rem"}}
-                    className='textarea'
-                  />
-               </FormControl>
-            </div>
+          <div className='review-row'>
+            <FormControl>
+              <TextField
+                onChange={handleChange}
+                required
+                id="review_text"
+                name="review_text"
+                label="Review"
+                value={newReview.review_text}
+                type="text"
+                multiline
+                rows={5}
+                sx={{ width: "30rem" }}
+                className='textarea'
+              />
+            </FormControl>
+          </div>
 
           <div className='review-buttons'>
-              <Button className='review-button' onClick={handleSubmit} sx={{
+            <Button className='review-button' onClick={handleSubmit} sx={{
               color: "white",
               padding: "12px",
               bgcolor: "#2d2aef",
               '&:hover': {
                 background: "#6487e8",
-             }
+              }
             }}>
-                  <AddRoundedIcon/>&nbsp;Add Review
+              <AddRoundedIcon />&nbsp;Add Review
+            </Button>
+
+            <NavLink to={`/beershow/${currentBeer?.id}`}>
+              <Button className='review-button' sx={{
+                color: "white",
+                padding: "12px",
+                bgcolor: "#ee1515",
+                '&:hover': {
+                  background: "#f76262",
+                }
+              }}>
+                <CancelRoundedIcon />&nbsp;Cancel
               </Button>
-              <Button className='review-button' href={`/beershow/${currentBeer?.id}`} sx={{
-              color: "white",
-              padding: "12px",
-              bgcolor: "#ee1515",
-              '&:hover': {
-                background: "#f76262",
-             }
-            }}>
-                <CancelRoundedIcon/>&nbsp;Cancel
-              </Button>
+            </NavLink>
           </div>
 
         </div>
