@@ -86,25 +86,40 @@ const Home = ({ current_user }) => {
   } else if (current_user){
     return (
       <>
-        <div className='user-home'>
-          <div className='user-body'>
-          <div className='greeting-header'>
-          <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
-          <div className='home-buttons'>
+        <div className='home-body'>
+      <article className='home-scroll'> 
+      <section className='greeting'>
+        <div className='greeting-header'>
+        <h1 id='heading'>Welcome to Pint Pal </h1>
+        <div className='home-buttons'>
+      <Button className="homeButton" >
+        <NavLink><Link to="second-page" smooth={true} offset={-70} duration={500}>Suggestion</Link>
+        </NavLink>
+      </Button>
       <Button className="homeButton" >
         <NavLink to={'/beerindex'}>Get Started!
-       </NavLink>
+        </NavLink>
       </Button>
-  
       <Button className="homeButton" >
         <NavLink to={'/aboutus'}>About Us
         </NavLink>
       </Button>
       </div>
-    
-          </div>
-          </div>
-        </div>
+      </div>
+      </section>
+
+      <section id='second-page'>
+        <div className='suggestion'>
+      <h2>You don't know what you want to drink?</h2>
+      <h4>Click here!</h4>
+      <Button className="homeButton" >
+        <NavLink to={'/randombeer'}>What To Drink
+        </NavLink>
+      </Button>
+      </div>
+      </section>
+      </article>
+      </div>
       </>
     )
   }

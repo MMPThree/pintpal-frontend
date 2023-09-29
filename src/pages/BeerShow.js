@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import './BeerShow.css'
 
-const BeerShow = ({ current_user, beers, reviews, deleteReview }) => {
+const BeerShow = ({ current_user, beers, reviews, deleteReview, beerData }) => {
   const { id } = useParams()
 
   let selectedBeer = beers?.find((beer) => beer.id === +id)
   // Filter reviews based on the selected beer's id
   let beerReviews = reviews?.filter((review) => review?.beer_id === selectedBeer?.id)
-  
+
   return (
     <div className='beershow'>
     {selectedBeer && (

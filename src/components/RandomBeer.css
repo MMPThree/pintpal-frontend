@@ -1,0 +1,48 @@
+.random-page {
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.random-page::before {
+    content: "";
+    background-image: url('../assets/beer-craft.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: #876421;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.8;
+}
+
+.random-page h1 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
+}
+
+.random-button {
+    background-color: #bd881f;
+    color: white;
+}
+
+.random-button:hover {
+    background-color: "#2d2aef" !important
+}
+
+.random-beer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-card {
+    width: 23rem;
+}

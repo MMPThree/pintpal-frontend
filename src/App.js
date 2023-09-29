@@ -13,25 +13,13 @@ import ReviewNew from './pages/ReviewNew';
 import ReviewProtectedIndex from './pages/ReviewProtectedIndex';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import mockApi from './mockApi';
-
+import RandomBeer from './components/RandomBeer';
 
 const App = () => {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [beers, setBeers] = useState([])
   const [reviews, setReviews] = useState([])
-  const [beerData, setBeerData] = useState([])
-  const apiKey = process.env.REACT_APP_API_KEY
-
-  const beerFetch = () => {
-    fetch(
-      "https://api.punkapi.com/v2/beers"
-    )
-      .then((response) => response.json())
-      .then((payload) => setBeerData(payload))
-      .catch((error) => console.log(error))
-  }
 
   useEffect(() => {
     readBeer()
@@ -39,10 +27,6 @@ const App = () => {
 
   useEffect(() => {
     readReview()
-  }, [])
-
-  useEffect(() => {
-    beerFetch()
   }, [])
 
   const url = "http://localhost:3000"
@@ -184,10 +168,11 @@ const App = () => {
         <Route path="/login" element={<SignIn login={login} />} />
         <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/beerindex" element={<BeerIndex beers={beers} beerData={beerData} current_user={currentUser}/>} />
+        <Route path="/beerindex" element={<BeerIndex beers={beers} current_user={currentUser}/>} />
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
         {currentUser && (
           <>
+        <Route path="/randombeer" element={<RandomBeer beers={beers}/>}/>
         <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} current_user={currentUser} beers={beers} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews}
