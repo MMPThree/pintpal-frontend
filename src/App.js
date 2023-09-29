@@ -29,8 +29,8 @@ const App = () => {
     readReview()
   }, [])
 
-  const url = "http://localhost:3000"
-  // const url = "https://pintpal-backend.onrender.com"
+  // const url = "http://localhost:3000"
+  const url = "https://pintpal-backend.onrender.com"
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user")
