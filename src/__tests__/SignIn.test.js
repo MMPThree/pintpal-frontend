@@ -10,7 +10,7 @@ describe("<SignIn />", () => {
             </BrowserRouter>
         )
         const indexLink = screen.getByRole('heading', {
-            name: /login/i
+            name: /Login/i
           })
         expect(indexLink).toBeInTheDocument()
         const inputForm = screen.getByText(/email: password:/i)
