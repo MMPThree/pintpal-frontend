@@ -33,6 +33,8 @@ const RandomBeer = ({ beers }) => {
                 sx={{'&:hover': {
                     background: "#fff814",
                   },
+                  backgroundColor: "#bd881f",
+                  color: "#fff",
                   padding: "0.8em",
                   fontSize: "1rem",
                   marginRight: "1rem"
@@ -45,6 +47,8 @@ const RandomBeer = ({ beers }) => {
         sx={{'&:hover': {
             background: "#55AF4D",
           },
+          backgroundColor: "#bd881f",
+          color: "#fff",
           padding: "0.8em",
           fontSize: "1rem",
         }}

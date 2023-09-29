@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.beer-description img {
+    margin-left: 1rem;
+}
+
 .beer-content h3 {
     font-size: 3rem;
     font-weight: bold;
@@ -30,6 +34,7 @@
 .beer-content .description {
     font-family: Raleway !important;
     font-size: 2rem;
+    margin-right: 2.5rem;
 }
 
 .review-box {

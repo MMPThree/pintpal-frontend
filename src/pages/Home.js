@@ -111,7 +111,7 @@ const Home = ({ current_user }) => {
       <section id='second-page'>
         <div className='suggestion'>
       <h2>You don't know what you want to drink?</h2>
-      <h4>Click here!</h4>
+      <h4 style={{color: "#fff"}}>Click here!</h4>
       <Button className="homeButton" >
         <NavLink to={'/randombeer'}>What To Drink
         </NavLink>

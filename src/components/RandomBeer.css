@@ -27,15 +27,6 @@
     text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
 }
 
-.random-button {
-    background-color: #bd881f;
-    color: white;
-}
-
-.random-button:hover {
-    background-color: "#2d2aef" !important
-}
-
 .random-beer {
     display: flex;
     flex-direction: column;
