@@ -11,7 +11,6 @@ import Button from "@mui/material/Button";
 import './ReviewNew.css'
 
 const ReviewNew = ({ createReview, current_user, beers }) => {
-  console.log(current_user)
 
   const { id } = useParams()
   const currentBeer = beers?.find((beer) => beer.id === +id)

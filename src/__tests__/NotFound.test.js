@@ -9,7 +9,7 @@ describe("<NotFound />", () => {
                 <NotFound />
             </BrowserRouter>
         )
-        const greeting = screen.getByText("I got lost a spilled my beer!")
+        const greeting = screen.getByText("OOPS A Spilled Beer!")
         expect(greeting).toBeInTheDocument()
     })
 })
