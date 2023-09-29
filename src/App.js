@@ -13,7 +13,7 @@ import ReviewNew from './pages/ReviewNew';
 import ReviewProtectedIndex from './pages/ReviewProtectedIndex';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-
+import RandomBeer from './components/RandomBeer';
 
 const App = () => {
 
@@ -172,6 +172,7 @@ const App = () => {
         <Route path="/beershow/:id" element={<BeerShow beers={beers} current_user={currentUser} reviews={reviews}  deleteReview={deleteReview}/>} />
         {currentUser && (
           <>
+        <Route path="/randombeer" element={<RandomBeer beers={beers}/>}/>
         <Route path="/reviewnew/:id" element={<ReviewNew createReview={createReview} current_user={currentUser} beers={beers} />} />
         <Route path="/reviewedit/:id" element={<ReviewEdit beers={beers} current_user={currentUser} reviews={reviews} updateReview={updateReview} />} />
         <Route path="/reviewprotectedindex" element={<ReviewProtectedIndex reviews={reviews}
