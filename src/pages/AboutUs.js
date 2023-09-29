@@ -1,5 +1,9 @@
 import React from 'react'
 import { CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap"
+import mikeProf from '../assets/mike_prof.jpeg'
+import meganProf from '../assets/prof-pic-md.jpeg'
+import peterProf from '../assets/peter-prof-pic.jpeg'
+import "./AboutUs.css"
 
 const AboutUs = () => {
   return (
@@ -9,9 +13,10 @@ const AboutUs = () => {
         <Card>
           <CardImg
             alt="Project Manager profile"
-            src="src/assets/prof-pic-md.jpeg"
+            src={meganProf}
             top
             width="100%"
+            className="profile-pic"
           />
           <CardBody>
             <CardTitle tag="h5">
@@ -31,9 +36,10 @@ const AboutUs = () => {
         <Card>
           <CardImg
             alt="Tech Lead profile"
-            src="src/assets/mike-prof.jpeg"
-            top
+            src={mikeProf}
+            top 
             width="100%"
+            className="profile-pic"
           />
           <CardBody>
             <CardTitle tag="h5">
@@ -52,10 +58,11 @@ const AboutUs = () => {
         </Card>
         <Card>
           <CardImg
-            alt="Card image cap"
-            src="src/assets/peter-prof-pic.jpeg"
+            alt="Design Lead profile"
+            src={peterProf}
             top
             width="100%"
+            className="profile-pic"
           />
           <CardBody>
             <CardTitle tag="h5">
