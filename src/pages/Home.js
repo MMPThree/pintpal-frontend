@@ -12,7 +12,7 @@ const Home = ({ current_user }) => {
       <article className='home-scroll'> 
       <section className='greeting'>
         <div className='greeting-header'>
-        <h1 id='heading'>Welcome to Pint Pal </h1>
+        <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
         <div className='home-buttons'>
       <Button className="homeButton" >
         <NavLink><Link to="home-cards" smooth={true} offset={-70} duration={500}>Learn More</Link>
@@ -90,7 +90,7 @@ const Home = ({ current_user }) => {
       <article className='home-scroll'> 
       <section className='greeting'>
         <div className='greeting-header'>
-        <h1 id='heading'>Welcome to Pint Pal </h1>
+        <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
         <div className='home-buttons'>
       <Button className="homeButton" >
         <NavLink><Link to="second-page" smooth={true} offset={-70} duration={500}>Suggestion</Link>
@@ -110,8 +110,13 @@ const Home = ({ current_user }) => {
 
       <section id='second-page'>
         <div className='suggestion'>
-      <h2>You don't know what you want to drink?</h2>
-      <h4 style={{color: "#fff"}}>Click here!</h4>
+      <h2 style={{color: "#fff",
+                  fontSize: "4rem",
+                  textShadow: "-2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421"
+                  }}>You don't know what you want to drink?</h2>
+      <h4 style={{color: "#fff", 
+                  textShadow: "-2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421"
+                  }}>Click here!</h4>
       <Button className="homeButton" >
         <NavLink to={'/randombeer'}>What To Drink
         </NavLink>

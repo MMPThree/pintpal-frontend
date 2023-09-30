@@ -3,11 +3,15 @@
    position: relative;
    min-height: 100vh;
    text-align: center;
+   background-image: url('../assets/index-background.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 
-.beer-body::before {
+/* .beer-body::before {
     content: "";
-    background-image: url('../assets/beer-craft.avif');
+    background-image: url('../assets/index-background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,7 +22,7 @@
     bottom: 0px;
     left: 0px;
     opacity: 0.8;
-}
+} */
 
 .beer-body h1 {
     margin-top: 3rem;

@@ -222,11 +222,11 @@
     transform: translate(-50%, -50%);
 }
 
-.suggestion h2, h4 {
+/* .suggestion h2, h4 {
     color: #fff;
     text-shadow: -2px -2px 0 #876421, 2px -2px 0 #876421, -2px 2px 0 #876421, 2px 2px 0 #876421;
     font-size: 3rem;
-}
+} */
 
 .suggestion h4 {
     font-size: 2rem !important;
