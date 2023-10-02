@@ -7,12 +7,13 @@ import { Link } from 'react-scroll'
 
 const Home = ({ current_user }) => {
   if (!current_user) {
+
     return (
       <div className='home-body'>
         <article className='home-scroll'>
           <section className='greeting'>
             <div className='greeting-header'>
-              <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
+              <h1 id='heading'>Welcome to Pint Pal</h1>
               <h3 className='slogan'>Discover, Sip, Share</h3>
               <div className='home-buttons'>
                 <Button className="homeButton" >
@@ -91,7 +92,7 @@ const Home = ({ current_user }) => {
           <article className='home-scroll'>
             <section className='greeting'>
               <div className='greeting-header'>
-                <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
+                <h1 id='heading'>Welcome to Pint Pal</h1>
                 <h3 className='slogan'>Discover, Sip, Share</h3>
                 <div className='home-buttons'>
                   <Button className="homeButton" >
