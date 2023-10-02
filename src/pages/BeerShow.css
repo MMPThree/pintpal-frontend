@@ -38,10 +38,10 @@
 }
 
 .review-box {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-gap: 1.2rem;
     margin-bottom: 5rem;
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
 }
 
 .reviews {
@@ -65,5 +65,8 @@
 @media screen and (max-width: 650px) {
     .beer-content h3 {
         font-size: 2.5rem;
+    }
+    .beer-description {
+        margin-left: 0.8rem;
     }
 }

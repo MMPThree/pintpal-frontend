@@ -22,8 +22,8 @@ const Header = ({ current_user, logout }) => {
 
         <NavItem>
           <NavLink to="/" className='nav-link'>
-            <img src={pintpal} alt='pintpal logo' width="60px" className='logo-img'/>
-            <span className='logo' style={{fontSize: "2.5rem"}}>PintPal</span>
+            <img src={pintpal} alt='pintpal logo' width="60px" className='logo-img' />
+            <span className='logo' style={{ fontSize: "2.5rem" }}>PintPal</span>
           </NavLink>
         </NavItem>
         <div className={click ? 'nav-menu active' : 'nav-menu'}>
@@ -49,23 +49,23 @@ const Header = ({ current_user, logout }) => {
           )}
           {!current_user && (
             <>
-          <NavItem>
-            <NavLink to="/login" className='nav-link'>
-              <FaSignInAlt /> Login
-            </NavLink>
-          </NavItem>
+              <NavItem>
+                <NavLink to="/login" className='nav-link'>
+                  <FaSignInAlt /> Login
+                </NavLink>
+              </NavItem>
 
-          <NavItem>
-            <NavLink to="/signup" className='nav-link'>
-              <FaPencilAlt /> Sign Up
-            </NavLink>
-          </NavItem>
-          </>
+              <NavItem>
+                <NavLink to="/signup" className='nav-link'>
+                  <FaPencilAlt /> Sign Up
+                </NavLink>
+              </NavItem>
+            </>
           )}
         </div>
         <div className='hamburger' onClick={handleClick}>
-            {click ? (<FaTimes size={25} style={{color: "#000"}}/>
-            ) : (<FaBars size={25} style={{color: "#000"}}/>) }
+          {click ? (<FaTimes size={25} style={{ color: "#000" }} />
+          ) : (<FaBars size={25} style={{ color: "#000" }} />)}
         </div>
       </Nav>
 
