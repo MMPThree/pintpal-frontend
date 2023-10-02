@@ -251,6 +251,15 @@ screen and (max-width: 300px) {
     .suggestion .homeButton {
         width: 8.5rem !important;
     }
+    .suggestion h2 {
+        font-size: 3.5rem !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .suggestion h2 {
+        font-size: 3.5rem !important;
+    }
 }
 
 @media screen and (max-height: 355px) {
