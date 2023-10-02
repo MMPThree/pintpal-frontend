@@ -3,28 +3,14 @@
    position: relative;
    min-height: 100vh;
    text-align: center;
-   background-image: url('../assets/index-background.webp');
+   background-image: url('../assets/index-page.avif');
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
 }
 
-/* .beer-body::before {
-    content: "";
-    background-image: url('../assets/index-background.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    background-color: #876421;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.8;
-} */
-
 .beer-body h1 {
+    padding-top: 2.5rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
     font-size: 4rem;

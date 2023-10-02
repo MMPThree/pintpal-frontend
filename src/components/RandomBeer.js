@@ -13,10 +13,10 @@ const RandomBeer = ({ beers }) => {
   const getRandomBeer = (arr, randomNum) => {
     let current = randomNum
     let newNum = Math.floor(Math.random() * arr.length)
-    while(current === newNum) {
-        newNum = Math.floor(Math.random() * arr.length)
-      }
-      setRandomNum(newNum);
+    while (current === newNum) {
+      newNum = Math.floor(Math.random() * arr.length)
+    }
+    setRandomNum(newNum);
   }
 
   //Call function to generate random number
@@ -27,24 +27,26 @@ const RandomBeer = ({ beers }) => {
 
   return (
     <div className='random-page'>
-        <h1>Click To Get Beer</h1>
-        <NavLink to={'/'}>
-              <Button
-                sx={{'&:hover': {
-                    background: "#fff814",
-                  },
-                  backgroundColor: "#bd881f",
-                  color: "#fff",
-                  padding: "0.8em",
-                  fontSize: "1rem",
-                  marginRight: "1rem"
-                }}
-               className='random-button' >
-                <HomeIcon />&nbsp;Go Back
-              </Button>
-            </NavLink>
+      <h1>Click To Get Beer</h1>
+      <NavLink to={'/'}>
         <Button
-        sx={{'&:hover': {
+          sx={{
+            '&:hover': {
+              background: "#fff814",
+            },
+            backgroundColor: "#bd881f",
+            color: "#fff",
+            padding: "0.8em",
+            fontSize: "1rem",
+            marginRight: "1rem"
+          }}
+          className='random-button' >
+          <HomeIcon />&nbsp;Go Back
+        </Button>
+      </NavLink>
+      <Button
+        sx={{
+          '&:hover': {
             background: "#55AF4D",
           },
           backgroundColor: "#bd881f",
@@ -54,23 +56,23 @@ const RandomBeer = ({ beers }) => {
         }}
         className='random-button'
         onClick={() => handleClick()}>
-            <SportsBarIcon />&nbsp; Click for Beer!
-        </Button>
-        <div className='random-beer'>
+        <SportsBarIcon />&nbsp; Click for Beer!
+      </Button>
+      <div className='random-beer'>
         {beers[0] && click && (
-             <Card className='random-card px-0 py-0' style={{ opacity: '1' }}>
-             <CardImg top width="100%" src={beers[randomNum].image_url} alt="" className='custom-image' />
-             <CardBody>
-               <div className='beer-text'>
-                 <CardTitle className='beer-name' style={{fontSize: "1.7rem"}}><b>{beers[randomNum].name}</b></CardTitle>
-                 <CardSubtitle>{beers[randomNum].style}</CardSubtitle>
-                 <CardSubtitle>ABV: {beers[randomNum].abv}%</CardSubtitle>
-                 <CardSubtitle style={{fontStyle: "italic"}}>{beers[randomNum].description}</CardSubtitle>
-               </div>
-               </CardBody>
-                </Card>
+          <Card className='random-card px-0 py-0' style={{ opacity: '1' }}>
+            <CardImg top width="100%" src={beers[randomNum].image_url} alt="" className='custom-image' />
+            <CardBody>
+              <div className='beer-text'>
+                <CardTitle className='beer-name' style={{ fontSize: "1.7rem" }}><b>{beers[randomNum].name}</b></CardTitle>
+                <CardSubtitle>{beers[randomNum].style}</CardSubtitle>
+                <CardSubtitle>ABV: {beers[randomNum].abv}%</CardSubtitle>
+                <CardSubtitle style={{ fontStyle: "italic" }}>{beers[randomNum].description}</CardSubtitle>
+              </div>
+            </CardBody>
+          </Card>
         )}
-        </div>
+      </div>
     </div>
   )
 }

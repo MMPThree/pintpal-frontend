@@ -23,7 +23,7 @@ const SignUp = ({ signup }) => {
       <h2 className='sign-header'>Sign Up</h2>
       <form className='signup-form' ref={formRef} onSubmit={handleSubmit}>
         Username: <input type="text" name="username" placeholder="username" className='signup-input' />
-        <br/>
+        <br />
         Email: <input type="email" name="email" placeholder="email" className='signup-input' />
         <br />
         Password: <input type="password" name="password" placeholder="password" className='signup-input' />
@@ -39,7 +39,7 @@ const SignUp = ({ signup }) => {
         <br />
         <input className="submit-form" type='submit' value="Register" />
         <div className="bottom-link">Already have an account?
-          <a href="/login">  <u style={{textDecoration: "none"}}>Login</u></a>
+          <a href="/login">  <u style={{ textDecoration: "none" }}>Login</u></a>
         </div>
       </form>
     </div>

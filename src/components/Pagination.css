@@ -15,8 +15,8 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
-    color: #eee;
-    border-color: #eee;
+    color: #000;
+    border-color: #737373;
     margin-bottom: 7rem;
 }
 

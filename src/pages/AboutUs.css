@@ -1,3 +1,80 @@
+.about-us {
+    margin-top: 4rem;
+    text-align: center;
+    min-height: 100vh;
+    background-image: url('../assets/aboutus-page.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us h1 {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    font-size: 3.5rem !important;
+    color: #fff;
+    text-shadow: -2px -2px 0 #737373, 2px -2px 0 #737373, -2px 2px 0 #737373, 2px 2px 0 #737373;
+}
+
+.about-us h3 {
+    color: #fff;
+    text-shadow: -1px -1px 0 #737373, 1px -1px 0 #737373, -1px 1px 0 #737373, 1px 1px 0 #737373;
+}
+
+.about {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.about-card {
+    border: 2px solid #a1b2a1 !important;
+    -moz-box-shadow: 0 0 10px #807e7a;
+    -webkit-box-shadow: 0 0 10px #807e7a;
+    box-shadow: 0 0 10px #807e7a;
+    border-radius: 10px !important;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-btns {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .profile-pic {
-    height: 310px;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.github-icon {
+    font-size: 3rem !important;
+}
+
+.github-icon:hover {
+    color: #2b3137 !important;
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+.linkedin-icon {
+    font-size: 3rem !important;
+}
+
+.linkedin-icon:hover {
+    color: #0A66C2;
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
+
+@media screen and (max-width: 1178px) {
+    .about {
+        flex-direction: column;
+    }
 }
