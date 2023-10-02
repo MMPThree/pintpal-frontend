@@ -118,7 +118,7 @@ const ReviewNew = ({ createReview, current_user, beers }) => {
             <Button className='review-button' onClick={handleSubmit} sx={{
               color: "white",
               padding: "12px",
-              bgcolor: "#2d2aef",
+              bgcolor: "#55AF4D",
               '&:hover': {
                 background: "#6487e8",
               }

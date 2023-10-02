@@ -132,7 +132,7 @@ const ReviewEdit = ({ updateReview, current_user, beers, reviews }) => {
             <Button className='review-button' onClick={handleSubmit} sx={{
               color: "white",
               padding: "12px",
-              bgcolor: "#2d2aef",
+              bgcolor: "#55AF4D",
               '&:hover': {
                 background: "#6487e8",
               }
