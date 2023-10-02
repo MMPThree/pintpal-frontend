@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import './BeerShow.css'
 
-const BeerShow = ({ current_user, beers, reviews, deleteReview, beerData }) => {
+const BeerShow = ({ current_user, beers, reviews, deleteReview }) => {
   const { id } = useParams()
 
   let selectedBeer = beers?.find((beer) => beer.id === +id)
@@ -14,46 +14,47 @@ const BeerShow = ({ current_user, beers, reviews, deleteReview, beerData }) => {
 
   return (
     <div className='beershow'>
-    {selectedBeer && (
-      <>
-      <div className='beer-description'>
-      <img alt={selectedBeer?.name} src={selectedBeer?.image_url} style={{width: "35rem"}}/>
-      <div className='beer-content'>
-      <h3> {selectedBeer?.name}</h3>
-      <ul>
-        <li>{selectedBeer?.style}</li>
-        <li>ABV: {selectedBeer?.abv}%</li>
-        <li className='description'>{selectedBeer?.description}</li>
-      </ul>
-      {current_user && (
+      {selectedBeer && (
         <>
-          <div className='index-buttons'>
-                <NavLink to={'/beerindex'} className='nav-link'>
-                  <Button className='beer-button'>Back to Beers</Button>
-                </NavLink>
-                <NavLink to={`/reviewnew/${selectedBeer.id}`}  className='nav-link'>
-                  <Button className='beer-button'>Add Review</Button>
-                </NavLink>
+          <div className='beer-description'>
+            <img alt={selectedBeer?.name} src={selectedBeer?.image_url} style={{ width: "35rem" }} />
+            <div className='beer-content'>
+              <h3> {selectedBeer?.name}</h3>
+              <ul>
+                <li>{selectedBeer?.style}</li>
+                <li>ABV: {selectedBeer?.abv}%</li>
+                <li className='description'>{selectedBeer?.description}</li>
+              </ul>
+              {current_user && (
+                <>
+                  <div className='index-buttons'>
+                    <NavLink to={'/beerindex'} className='nav-link'>
+                      <Button className='beer-button'>Back to Beers</Button>
+                    </NavLink>
+                    <NavLink to={`/reviewnew/${selectedBeer.id}`} className='nav-link'>
+                      <Button className='beer-button'>Add Review</Button>
+                    </NavLink>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+          <h2 className='reviews'>Reviews</h2>
+          <div className='review-box'>
+            {beerReviews?.map((review, index) => {
+              return (
+                <div key={index} className='review-margin'>
+                  <Review review={review}
+                    current_user={current_user}
+                    index={index}
+                    deleteReview={deleteReview}
+                  />
+                </div>
+              )
+            })}
           </div>
         </>
       )}
-      </div>
-      </div>
-      <h2 className='reviews'>Reviews</h2>
-      <div className='review-box'>
-        {beerReviews?.map((review, index) => {
-          return(
-          <div key={index} className='review-margin'>
-      <Review review={review}
-      current_user={current_user}
-      index={index}
-      deleteReview={deleteReview} />
-      </div>
-          )
-    })}
-   </div>
-      </>
-    )}
     </div>
   )
 }

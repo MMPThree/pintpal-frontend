@@ -21,9 +21,9 @@ const SelectStyles = ({ handleSelect, styles, selectedStyle }) => {
         >
           {styles?.map((style, index) => {
             return (
-              <MenuItem 
-              key={index}
-              value={style}
+              <MenuItem
+                key={index}
+                value={style}
               >
                 {style}
               </MenuItem>
@@ -31,22 +31,6 @@ const SelectStyles = ({ handleSelect, styles, selectedStyle }) => {
           })}
         </Select>
       </FormControl>
-
-      {/* <FormControl >
-              <InputLabel>ABV Range</InputLabel>
-              <Select
-                value={abv}
-
-              >
-
-                <MenuItem value="">All</MenuItem>
-                <MenuItem value="5">5% and below</MenuItem>
-                <MenuItem value="5-7">5% - 7%</MenuItem>
-                 Add more ABV options
-    </Select>
-            </FormControl >  */}
-
-
     </div >
   )
 }

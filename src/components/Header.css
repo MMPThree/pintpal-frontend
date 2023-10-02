@@ -38,6 +38,10 @@
     color: #dca730 !important;
 }
 
+.nav-link .logo:hover {
+  color: #fcb63f;
+}
+
 .hamburger {
     display: none;
 }

@@ -5,6 +5,10 @@
     align-items: center;
     min-height: 100vh;
     background-color: #eaeaea;
+    background-image: url('../assets/about-us.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     overflow: hidden !important;
 } 
 

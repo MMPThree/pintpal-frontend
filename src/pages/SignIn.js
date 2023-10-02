@@ -28,7 +28,7 @@ const SignIn = ({ login }) => {
         <br />
         <input className="submit-form" type='submit' value="Login" />
         <div className="bottom-link">Not registered?
-          <a href="/signup">  <u style={{textDecoration: "none"}}>Sign Up</u></a>
+          <a href="/signup">  <u style={{ textDecoration: "none" }}>Sign Up</u></a>
         </div>
       </form>
     </div>
