@@ -1,5 +1,12 @@
 .signin-body {
-    background-color: #fcb63f;
+    /* background-color: #fcb63f; */
+    background-image: url("../assets/login1.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    /* */
     min-height: 100vh;
     color: white;
     display: flex;
@@ -20,7 +27,9 @@
 
 .signin-form {
     width: 40%;
-    background-color: #a87e2f;
+    /* background-color: #a87e2f; */
+    background: rgba(168, 126, 47, 0.6);
+    /* opacity: 0.9; */
     display: flex;
     flex-direction: column;
     justify-content: center;

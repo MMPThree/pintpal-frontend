@@ -12,7 +12,7 @@ const Home = ({ current_user }) => {
       <article className='home-scroll'> 
       <section className='greeting'>
         <div className='greeting-header'>
-        <h1 id='heading'>Welcome to Pint Pal 🍻</h1>
+        <h1 id='heading'>Welcome to Pint Pal</h1>
         <div className='home-buttons'>
       <Button className="homeButton" >
         <NavLink><Link to="home-cards" smooth={true} offset={-70} duration={500}>Learn More</Link>
