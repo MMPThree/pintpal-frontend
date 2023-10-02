@@ -61,7 +61,7 @@ const RandomBeer = ({ beers }) => {
       <div className='random-beer'>
         {beers[0] && click && (
           <Card className='random-card px-0 py-0' style={{ opacity: '1' }}>
-            <CardImg top width="100%" src={beers[randomNum].image_url} alt="" className='custom-image' />
+            <CardImg top width="100%" src={beers[randomNum].image_url} alt="" className='custom-image' style={{height: "18rem"}}/>
             <CardBody>
               <div className='beer-text'>
                 <CardTitle className='beer-name' style={{ fontSize: "1.7rem" }}><b>{beers[randomNum].name}</b></CardTitle>

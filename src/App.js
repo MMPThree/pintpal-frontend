@@ -28,8 +28,8 @@ const App = () => {
   const firstPostIndex = lastPostIndex - perPage
   const currentBeers = beers?.slice(firstPostIndex, lastPostIndex)
 
-  // const url = "http://localhost:3000"
-  const url = "https://pintpal-backend.onrender.com"
+  const url = "http://localhost:3000"
+  // const url = "https://pintpal-backend.onrender.com"
 
   useEffect(() => {
     readBeer();
