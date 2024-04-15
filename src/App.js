@@ -29,7 +29,7 @@ const App = () => {
   const currentBeers = beers?.slice(firstPostIndex, lastPostIndex)
 
   // const url = "http://localhost:3000"
-  const url = "https://backend-pintpal.vercel.app"
+  const url = "https://pintpal-backend.onrender.com"
 
   useEffect(() => {
     readBeer();
